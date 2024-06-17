@@ -2,11 +2,13 @@ import { createBrowserRouter, } from "react-router-dom";
 import MainLayout from "../../Layout/MainLayout";
 import Home from "../../Pages/Home";
 import About from "../../Pages/About";
-import Appointment from "../../Pages/Appointment";
 import Contact from "../../Pages/Contact";
 import Login from "../Login-Regester/Login";
 import Register from "../Login-Regester/Register";
 import Doctors from "../../Pages/Doctors";
+import Services from "../../Pages/Services";
+import HomeTwo from "../../Pages/HomeTwo";
+import HomeOne from "../../Pages/HomeOne";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +20,14 @@ const router = createBrowserRouter([
                 element: <Home />
             },
             {
+                path: 'homepage/homeOne',
+                element: <HomeOne />
+            },
+            {
+                path: 'homepage/homeTwo',
+                element: <HomeTwo />
+            },
+            {
                 path: '/about',
                 element: <About />
             },
@@ -26,8 +36,8 @@ const router = createBrowserRouter([
                 element: <Contact />
             },
             {
-                path: '/appointment',
-                element: <Appointment />
+                path: '/service',
+                element: <Services />
             },
             {
                 path: '/doctors',

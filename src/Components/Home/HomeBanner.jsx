@@ -12,9 +12,9 @@ const HomeBanner = () => {
                     <div>
                         <h4 className='text-2xl font-bold pb-6 flex'><img src={flower} className='h-12 w-12' /><p className='pt-2'>SERVING TO THE PEOPLE SINCE 2000</p></h4>
                         <h1 className="text-7xl text-black font-bold">On a Pursuit of
-                            Better Medicine</h1>
+                            Better <span className='text-teal-600'> Medicine</span></h1>
                         <p className="py-6 font-semibold">This is open to everyone every day and provides primary health care and cutting-edge medicine in a central location .</p>
-                        <button className="btn btn-primary">Get Started</button>
+                        <button className="btn rounded-full bg-teal-600 text-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg ">Get Started</button>
                     </div>
                 </div>
             </div>

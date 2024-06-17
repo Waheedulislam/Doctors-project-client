@@ -74,7 +74,7 @@ const Login = () => {
                         </div>
                         <div className="card shrink-0 w-full max-w-lg max-h-lg shadow-2xl bg-base-100">
                             <form onSubmit={handleWithSingIn} className="card-body">
-                                <h1 className="text-4xl font-bold text-center">Login now...!</h1>
+                                <h1 className="text-4xl font-bold text-center text-teal-700">Login now...!</h1>
 
                                 {/* Email  */}
                                 <div className="form-control">
@@ -124,12 +124,12 @@ const Login = () => {
 
                                 <div className="flex justify-center ">
                                     <p className="font-semibold">Do not have any account ?</p>
-                                    <Link to={'/register'} className="mr-48 font-bold hover:text-error">Register</Link>
+                                    <Link to={'/register'} className="mr-48 font-bold hover:text-teal-600">Register</Link>
                                 </div>
 
 
                                 <div className="form-control mt-6">
-                                    <button type="submit" disabled={loading} className="btn btn-primary"> {loading ? 'Loading...' : 'Logins'}</button>
+                                    <button type="submit" disabled={loading} className="btn rounded-full bg-teal-600 text-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg "> {loading ? 'Loading...' : 'Logins'}</button>
                                 </div>
                             </form>
                             <div className="flex flex-col w-full">

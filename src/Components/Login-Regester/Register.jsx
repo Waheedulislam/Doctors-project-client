@@ -74,7 +74,7 @@ const Register = () => {
                     </div>
                     <div className="card shrink-0 w-full max-w-lg max-h-lg shadow-2xl bg-base-100">
                         <form onSubmit={handleWithSignUp} className="card-body ">
-                            <h1 className="text-4xl font-bold text-center">Sign Up now...!</h1>
+                            <h1 className="text-4xl font-bold text-center text-teal-700">Sign Up now...!</h1>
 
                             {/* Name  */}
                             <div className="form-control">
@@ -126,12 +126,12 @@ const Register = () => {
                             }
                             <div className="flex justify-center ">
                                 <p className="font-semibold">Already have an account ?</p>
-                                <Link to={'/login'} className="mr-52 font-bold hover:text-error">Login </Link>
+                                <Link to={'/login'} className="mr-52 font-bold hover:text-teal-600">Login </Link>
                             </div>
 
 
                             <div className="form-control mt-6">
-                                <button type="submit" disabled={loading} className="btn btn-primary"> {loading ? 'Loading...' : 'Register'}</button>
+                                <button type="submit" disabled={loading} className="btn rounded-full bg-teal-600 text-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg "> {loading ? 'Loading...' : 'Register'}</button>
                             </div>
                         </form>
 
