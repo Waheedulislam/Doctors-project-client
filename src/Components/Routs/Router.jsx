@@ -3,10 +3,10 @@ import MainLayout from "../../Layout/MainLayout";
 import Home from "../../Pages/Home";
 import About from "../../Pages/About";
 import Appointment from "../../Pages/Appointment";
-import Services from "../../Pages/Services";
 import Contact from "../../Pages/Contact";
 import Login from "../Login-Regester/Login";
 import Register from "../Login-Regester/Register";
+import Doctors from "../../Pages/Doctors";
 
 const router = createBrowserRouter([
     {
@@ -30,8 +30,8 @@ const router = createBrowserRouter([
                 element: <Appointment />
             },
             {
-                path: '/services',
-                element: <Services />
+                path: '/doctors',
+                element: <Doctors />
             },
             {
                 path: '/login',

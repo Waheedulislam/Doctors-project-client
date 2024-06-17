@@ -18,7 +18,7 @@ const Login = () => {
 
     // Reset password
     const [email, setEmail] = useState('');
-    console.log(email)
+
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(
         auth
     );
@@ -50,12 +50,12 @@ const Login = () => {
             navigate(from, { replace: true })
         }
     }, [navigate, user, from])
-    console.log(user, error)
 
     const handleResetPassword = async () => {
         const success = await sendPasswordResetEmail(
             email
         );
+
         if (success) {
             alert('Please Check your email.')
             toast.success('Sent email.')
@@ -117,6 +117,7 @@ const Login = () => {
                                 {
                                     error && <p style={{ color: 'red' }} className="text-start font-semibold">{error?.message?.slice(10, 44)}</p>
                                 }
+
                                 {
                                     loginError && <p style={{ color: 'red' }} className="text-start ">{loginError}</p>
                                 }

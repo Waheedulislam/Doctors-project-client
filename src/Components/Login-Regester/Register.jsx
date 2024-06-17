@@ -10,14 +10,21 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import GoogleLogin from "../Auth/GoogleLogin/GoogleLogin";
 import GithubLogin from "../Auth/GithubLogin/GithubLogin";
 
+
 const Register = () => {
+
+    // create user email and password 
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+
+    // password show
     const [showPassword, setShowPassword] = useState(false);
+
+
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -36,6 +43,7 @@ const Register = () => {
         const password = form.password.value;
         console.log(name, email, password)
 
+        // password length check error
         if (password.length < 6) {
             setRegisterError('Password should be at least 6 characters');
             return;
@@ -47,6 +55,7 @@ const Register = () => {
         createUserWithEmailAndPassword(email, password, name)
 
     }
+
 
     useEffect(() => {
         if (user) {
