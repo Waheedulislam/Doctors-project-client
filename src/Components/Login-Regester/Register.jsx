@@ -1,12 +1,60 @@
-// import emailIcon from '../../assets/image/email_icon.png'
-// import passwordIcon from '../../assets/image/password_icon.png'
-// import nameIcon from '../../assets/image/password_icon.png'
+// // import emailIcon from '../../assets/image/email_icon.png'
+// // import passwordIcon from '../../assets/image/password_icon.png'
+// // import nameIcon from '../../assets/image/password_icon.png'
 
-import { Link } from "react-router-dom";
-import GithubLogin from "../Auth/GithubLogin/GithubLogin";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../Firebase/firebase.config";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import GoogleLogin from "../Auth/GoogleLogin/GoogleLogin";
+import GithubLogin from "../Auth/GithubLogin/GithubLogin";
 
 const Register = () => {
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+    const [showPassword, setShowPassword] = useState(false);
+
+    const location = useLocation();
+    const navigate = useNavigate();
+    const [registerError, setRegisterError] = useState('');
+    const formLocation = location?.state?.form?.pathname || '/';
+
+    const handleWithSignUp = async (e) => {
+        e.preventDefault();
+
+        // reset error
+        setRegisterError('');
+
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(name, email, password)
+
+        if (password.length < 6) {
+            setRegisterError('Password should be at least 6 characters');
+            return;
+        }// password upper case check
+        else if (!/[A-Z]/.test(password)) {
+            setRegisterError('Error: Password should have at least One Upper case characters')
+            return;
+        }
+        createUserWithEmailAndPassword(email, password, name)
+
+    }
+
+    useEffect(() => {
+        if (user) {
+            navigate(formLocation, { replace: true });
+        }
+    }, [formLocation, user, navigate])
+
+    console.log(error)
     return (
         <div>
             <div className="hero min-h-screen ">
@@ -16,7 +64,7 @@ const Register = () => {
 
                     </div>
                     <div className="card shrink-0 w-full max-w-lg max-h-lg shadow-2xl bg-base-100">
-                        <form className="card-body">
+                        <form onSubmit={handleWithSignUp} className="card-body ">
                             <h1 className="text-4xl font-bold text-center">Sign Up now...!</h1>
 
                             {/* Name  */}
@@ -25,6 +73,7 @@ const Register = () => {
                                     <span className="label-text">Name</span>
                                 </label>
                                 <input type="name"
+                                    name="name"
                                     placeholder="Name"
                                     className="input input-bordered"
                                     required />
@@ -36,6 +85,7 @@ const Register = () => {
                                     <span className="label-text">Email</span>
                                 </label>
                                 <input type="email"
+                                    name="email"
                                     placeholder="Email"
                                     className="input input-bordered"
                                     required />
@@ -46,22 +96,37 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password"
-                                    placeholder="password"
-                                    className="input input-bordered"
-                                    required />
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
+                                <div className="relative ">
+                                    <input type={showPassword ? 'text' : "password"}//note: show password true hole 'text' are wrong hole 'password'
+                                        name='password'
+                                        placeholder="password"
+                                        className="input input-bordered w-full"
+                                        required />
+                                    <span className="absolute pt-4  right-4" onClick={() => setShowPassword(!showPassword)}>
+                                        {
+                                            showPassword ? <FaEyeSlash className="w-5 h-5"></FaEyeSlash> : <FaEye className="w-5 h-5" />
+                                        }
+                                    </span>
+                                </div>
                             </div>
+                            {
+                                error && <p style={{ color: 'red' }} className="text-start font-semibold">{error?.message?.slice(10, 44)}</p>
+                            }
+                            {
+                                registerError && <p style={{ color: 'red' }} className="text-start ">{registerError}</p>
+                            }
                             <div className="flex justify-center ">
                                 <p className="font-semibold">Already have an account ?</p>
-                                <Link to={'/login'} className="pr-52 font-bold hover:text-primary">Login </Link>
+                                <Link to={'/login'} className="mr-52 font-bold hover:text-error">Login </Link>
                             </div>
+
+
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Register</button>
+                                <button type="submit" disabled={loading} className="btn btn-primary"> {loading ? 'Loading...' : 'Register'}</button>
                             </div>
                         </form>
+
+
                         <div className="flex flex-col w-full">
                             <div className="divider divider-neutral mx-8">OR</div>
                         </div>

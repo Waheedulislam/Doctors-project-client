@@ -1,12 +1,23 @@
+import { useLocation, useNavigate } from 'react-router-dom';
 import googleIcon from '../../../assets/image/google.png'
 import auth from '../../Firebase/firebase.config';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth'
+import { useEffect } from 'react';
 const GoogleLogin = () => {
     const [signInWithGoogle, user] = useSignInWithGoogle(auth);
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const formLocation = location?.state?.form?.pathname || '/'
     const handleSignInGoogle = () => {
         signInWithGoogle()
     }
-    console.log(user)
+    useEffect(() => {
+        if (user) {
+            navigate(formLocation, { replace: true })
+        }
+    }, [user, formLocation, navigate])
+
     return (
         <div>
             <div className="mx-8 mt-6">

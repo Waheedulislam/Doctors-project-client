@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC3g5zW4mSxjc3_NIStCFfXeUqLvMtvdMI",
-  authDomain: "doctorate-12b77.firebaseapp.com",
-  projectId: "doctorate-12b77",
-  storageBucket: "doctorate-12b77.appspot.com",
-  messagingSenderId: "514433927039",
-  appId: "1:514433927039:web:c4e5aa2f7c21db77823c4a",
+  apiKey: "AIzaSyAiN0TYnxjR2Jp8YHcJK-3GoaBhD35LUo8",
+  authDomain: "doctorate-2.firebaseapp.com",
+  projectId: "doctorate-2",
+  storageBucket: "doctorate-2.appspot.com",
+  messagingSenderId: "302906707684",
+  appId: "1:302906707684:web:27f52d11f3247470c026f1",
 };
 
 // Initialize Firebase
