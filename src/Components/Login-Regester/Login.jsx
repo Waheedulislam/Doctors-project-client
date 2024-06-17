@@ -2,9 +2,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import GithubLogin from "../Auth/GithubLogin/GithubLogin";
 import GoogleLogin from "../Auth/GoogleLogin/GoogleLogin";
 import auth from "../Firebase/firebase.config";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 
 const Login = () => {
@@ -14,6 +15,14 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
+    // Reset password
+    const [email, setEmail] = useState('');
+    console.log(email)
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(
+        auth
+    );
+
     const location = useLocation();
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
@@ -42,6 +51,16 @@ const Login = () => {
         }
     }, [navigate, user, from])
     console.log(user, error)
+
+    const handleResetPassword = async () => {
+        const success = await sendPasswordResetEmail(
+            email
+        );
+        if (success) {
+            alert('Please Check your email.')
+            toast.success('Sent email.')
+        }
+    };
     return (
         <div>
             <div>
@@ -65,6 +84,7 @@ const Login = () => {
                                     <input type="email"
                                         placeholder="Email"
                                         name="email"
+                                        onChange={(e) => setEmail(e.target.value)}
                                         className="input input-bordered"
                                         required />
                                 </div>
@@ -88,9 +108,9 @@ const Login = () => {
                                     </div>
                                 </div>
 
-                                {/* <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label> */}
+                                <label className="label">
+                                    <a onClick={handleResetPassword} href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                </label>
 
                                 {/* error massage  */}
 
