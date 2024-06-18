@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import doctorateIcon from "../../assets/image/doctor.png";
 import calendarIcon from "../../assets/image/calendar.png";
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
@@ -39,49 +39,65 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                            className="menu menu-sm gap-2 dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
                         >
-                            <li>
+                            <li >
                                 <details>
                                     <summary className="btn bg-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg">
                                         Home
                                     </summary>
-                                    <ul className="p-2  border-teal-700 border-2 rounded-xl">
-                                        <Link
-                                            className="text-xl font-semibold  hover:text-teal-700 ml-5"
-                                            to={"homepage/homeOne"}
+                                    <ul className="p-2 mt-1 border-teal-700 border-2 rounded-xl">
+                                        <NavLink
+                                            className={({ isActive }) =>
+                                                isActive
+                                                    ? 'text-teal-700  bg-base-100 text-lg border-none  hover:border-none hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                                    : '  bg-white border-white border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                            } to={"homepage/homeOne"}
                                         >
                                             Home 1
-                                        </Link>
+                                        </NavLink>
                                         <br />
-                                        <Link
-                                            className=" text-xl font-semibold  hover:text-teal-700 ml-5"
-                                            to={"homepage/homeTwo"}
+                                        <NavLink
+                                            className={({ isActive }) =>
+                                                isActive
+                                                    ? 'text-teal-700  bg-base-100 text-lg border-none  hover:border-none hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                                    : '  bg-white border-white border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                            } to={"homepage/homeTwo"}
                                         >
                                             Home 2
-                                        </Link>
+                                        </NavLink>
                                     </ul>
                                 </details>
                             </li>
-                            <Link
-                                className=" btn bg-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg"
-                                to={"/about"}
+                            <NavLink
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? 'text-teal-700 bg-white text-lg btn  hover:bg-white border-2 hover:border-teal-700  border-teal-700 px-3 py-2 rounded-lg  font-medium'
+                                        : 'btn  bg-white border-white border-2  hover:bg-white hover:border-teal-700 hover:text-teal-700 px-3 py-2 rounded-lg text-lg font-medium'
+                                } to={"/about"}
                             >
                                 About Us
-                            </Link>
-                            <Link
-                                className=" btn bg-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg"
-                                to={"/doctors"}
+                            </NavLink>
+                            <NavLink
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? 'text-teal-700 bg-white text-lg btn  hover:bg-white border-2 hover:border-teal-700  border-teal-700 px-3 py-2 rounded-lg  font-medium'
+                                        : 'btn  bg-white border-white border-2  hover:bg-white hover:border-teal-700 hover:text-teal-700 px-3 py-2 rounded-lg text-lg font-medium'
+                                } to={"/doctors"}
                             >
                                 Doctors
-                            </Link>
-                            <Link
-                                className=" btn bg-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg"
-                                to={"/service"}
+                            </NavLink>
+                            < NavLink
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? 'text-teal-700 bg-white text-lg btn  hover:bg-white border-2 hover:border-teal-700  border-teal-700 px-3 py-2 rounded-lg  font-medium'
+                                        : 'btn  bg-white border-white border-2  hover:bg-white hover:border-teal-700 hover:text-teal-700 px-3 py-2 rounded-lg text-lg font-medium'
+                                } to={"/service"}
                             >
                                 {" "}
                                 Services
-                            </Link>
+                            </NavLink>
+
                             {/* Sign in / sign up  */}
                             {!user?.email ? (
                                 <>
@@ -101,10 +117,14 @@ const Navbar = () => {
                             ) : (
                                 <>
                                     <div className=" gap-4 justify-center">
-                                        <Link className="btn btn-ghost text-lg" to={"/Dashboard"}>
-                                            <img className="w-8 h-8" src={calendarIcon} alt="" />
+                                        <NavLink className={({ isActive }) =>
+                                            isActive
+                                                ? 'text-teal-700 w-full bg-white text-lg btn  hover:bg-white border-2 hover:border-teal-700  border-teal-700 px-3 py-2 rounded-lg  font-medium'
+                                                : 'btn  bg-white w-full border-white border-2  hover:bg-white hover:border-teal-700 hover:text-teal-700 px-3 py-2 rounded-lg text-lg font-medium'
+                                        } to={"/Dashboard"}>
+                                            <img className="w-8 ml-4 h-8" src={calendarIcon} alt="" />
                                             Dashboard
-                                        </Link>
+                                        </NavLink>
 
                                         <div className="avatar">
                                             <div className="w-12 mt-3 ml-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
@@ -128,49 +148,74 @@ const Navbar = () => {
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex ">
-                    <ul className="menu dropdown-content menu-horizontal gap-1 px-1 ">
-                        <li>
-                            <details>
-                                <summary className="btn bg-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg">
-                                    Home
-                                </summary>
-                                <ul className="w-40 justify-center border-teal-700 border-2 rounded-xl">
-                                    <Link
-                                        className="text-xl font-semibold  hover:text-teal-700 ml-5"
-                                        to={"homepage/homeOne"}
-                                    >
-                                        Home 1
-                                    </Link>
-                                    <br />
-                                    <Link
-                                        className=" text-xl font-semibold  hover:text-teal-700 ml-5"
-                                        to={"homepage/homeTwo"}
-                                    >
-                                        Home 2
-                                    </Link>
-                                </ul>
-                            </details>
-                        </li>
-                        <Link
-                            className="btn bg-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg"
+                    <ul className="menu  menu-horizontal gap-1 px-1 ">
+
+                        <div className="dropdown dropdown-end">
+                            <li>
+                                <details>
+                                    <summary className="btn bg-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg">
+                                        Home
+                                    </summary>
+                                    <ul tabIndex={0} className="w-48 h-30 z-[1] mt-1 menu dropdown-content  justify-center bg-base-100  border-teal-700 border-2 rounded-xl">
+                                        <NavLink
+                                            className={({ isActive }) =>
+                                                isActive
+                                                    ? 'text-teal-700  bg-base-100 text-lg border-none  hover:border-none hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                                    : '  bg-white border-white border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                            }
+                                            to={"homepage/homeOne"}
+                                        >
+                                            Home 1
+                                        </NavLink>
+                                        <br />
+                                        <NavLink
+                                            className={({ isActive }) =>
+                                                isActive
+                                                    ? 'text-teal-700  bg-base-100 text-lg border-none hover:border-none hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                                    : '  bg-white border-white border-2 border-none  hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                            } to={"homepage/homeTwo"}
+                                        >
+                                            Home 2
+                                        </NavLink>
+                                    </ul>
+                                </details>
+                            </li>
+                        </div>
+
+                        <NavLink
+
+                            className={({ isActive }) =>
+                                isActive
+                                    ? 'text-teal-700 bg-white text-lg btn  hover:bg-white border-2 hover:border-teal-700  border-teal-700 px-3 py-2 rounded-lg  font-medium'
+                                    : 'btn  bg-white border-white border-2  hover:bg-white hover:border-teal-700 hover:text-teal-700 px-3 py-2 rounded-lg text-lg font-medium'
+                            }
                             to={"/about"}
                         >
                             About Us
-                        </Link>
-                        <Link
-                            className="btn  bg-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg"
+                        </NavLink>
+
+                        <NavLink
+                            className={({ isActive }) =>
+                                isActive
+                                    ? 'text-teal-700 bg-white text-lg btn  hover:bg-white border-2 hover:border-teal-700  border-teal-700 px-3 py-2 rounded-lg  font-medium'
+                                    : 'btn  bg-white border-white border-2  hover:bg-white hover:border-teal-700 hover:text-teal-700 px-3 py-2 rounded-lg text-lg font-medium'
+                            }
                             to={"/doctors"}
                         >
                             Doctors
-                        </Link>
-                        <Link
-                            className="btn bg-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg"
+                        </NavLink>
+                        <NavLink
+                            className={({ isActive }) =>
+                                isActive
+                                    ? 'text-teal-700 bg-white text-lg btn  hover:bg-white border-2 hover:border-teal-700  border-teal-700 px-3 py-2 rounded-lg  font-medium'
+                                    : 'btn  bg-white border-white border-2  hover:bg-white hover:border-teal-700 hover:text-teal-700 px-3 py-2 rounded-lg text-lg font-medium'
+                            }
                             to={"/service"}
                         >
                             Services
-                        </Link>
+                        </NavLink>
 
-                        {/* Sign in / sign up  */}
+                        {/* Sign in / sign up */}
                         <div>
                             {!user?.email ? (
                                 <>
@@ -192,10 +237,14 @@ const Navbar = () => {
                             ) : (
                                 <>
                                     <div className="flex gap-4 justify-center pl-36">
-                                        <Link className="btn btn-ghost text-lg" to={"/Dashboard"}>
+                                        <NavLink className={({ isActive }) =>
+                                            isActive
+                                                ? 'text-teal-700 bg-white text-lg btn  hover:bg-white border-2 hover:border-teal-700  border-teal-700 px-3 py-2 rounded-lg  font-medium'
+                                                : 'btn  bg-white border-white border-2  hover:bg-white hover:border-teal-700 hover:text-teal-700 px-3 py-2 rounded-lg text-lg font-medium'
+                                        } to={"/Dashboard"}>
                                             <img className="w-8 h-8" src={calendarIcon} alt="" />
                                             Dashboard
-                                        </Link>
+                                        </NavLink>
 
                                         <div className="avatar">
                                             <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
