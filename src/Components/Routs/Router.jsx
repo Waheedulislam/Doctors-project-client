@@ -9,6 +9,9 @@ import Doctors from "../../Pages/Doctors";
 import Services from "../../Pages/Services";
 import HomeTwo from "../../Pages/HomeTwo";
 import HomeOne from "../../Pages/HomeOne";
+import DashboardLayout from "../../Layout/DashboardLayout";
+import PrivateRoute from "./PrivateRoute";
+import DashboardHome from "../../Pages/DashboardPage/DashboardHome";
 
 const router = createBrowserRouter([
     {
@@ -51,12 +54,23 @@ const router = createBrowserRouter([
                 path: '/register',
                 element: <Register />
             },
-            {
-                path: '/dashboard',
-                element: <Register />
-            },
+
         ]
     },
+    {
+        path: '/dashboard',
+        element: (
+            <PrivateRoute>
+                <DashboardLayout></DashboardLayout>
+            </PrivateRoute>
+        ),
+        children: [
+            {
+                index: 'dashboard',
+                element: <DashboardHome />
+            },
+        ]
+    }
 ]);
 
 export default router;
