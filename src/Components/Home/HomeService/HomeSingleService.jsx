@@ -5,7 +5,6 @@ import { FaArrowRight } from "react-icons/fa";
 
 // eslint-disable-next-line react/prop-types, no-unused-vars
 const HomeSingleService = ({ service }) => {
-    console.log(service)
     return (
 
         <div className="card grid w-96  bg-base-100 shadow-xl">

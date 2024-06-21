@@ -6,11 +6,11 @@ import { FaArrowRight } from "react-icons/fa";
 
 const HomeService = () => {
     const [services, setServices] = useState([]);
-    console.log(services)
+
     useEffect(() => {
         async function lodeBike() {
             const data = await axios.get('http://localhost:3000/Service')
-            console.log(data)
+
             if (data?.status == 200) {
                 setServices(data?.data)
             }
@@ -21,7 +21,7 @@ const HomeService = () => {
     return (
         <div className="mt-20">
             <div className="text-center my-20">
-                <h1 className="font-bold mb-8 btn text-xl bg-teal-100 text-black hover:text-black hover:bg-teal-100 rounded-full">Service</h1>
+                <h1 className="font-bold mb-8 btn text-xl bg-teal-100 text-black hover:text-black hover:bg-teal-100 rounded-full">Services</h1>
                 <h1 className="text-5xl font-bold text-black">The  <span className='text-teal-600'>Best Quality </span>
                     Service </h1>
                 <h1 className="text-5xl font-bold text-black">You Can Get</h1>

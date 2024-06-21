@@ -3,7 +3,9 @@ const HomeCheckUp = () => {
     return (
         <div className="">
             <div className="hero min-h-screen ">
+
                 <div className="hero-content flex-col lg:flex-row-reverse">
+
                     <img className='lg:w-2/4' src={checkUp} />
                     <div>
                         <h1 className="text-5xl font-bold">We provide high <br /> quality & <span className='text-teal-700'>cost effective</span> services</h1>

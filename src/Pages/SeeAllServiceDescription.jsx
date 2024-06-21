@@ -9,7 +9,7 @@ const SeeAllServiceDescription = () => {
     const [services, setServices] = useState([]);
     console.log(services)
     useEffect(() => {
-        async function lodeBike() {
+        async function lode() {
             const data = await axios.get(`http://localhost:3000/Service/${id}`)
             console.log(data)
             if (data?.status == 200) {
@@ -17,7 +17,7 @@ const SeeAllServiceDescription = () => {
             }
         }
 
-        lodeBike()
+        lode()
     }, [id])
     return (
         <div>
@@ -34,7 +34,7 @@ const SeeAllServiceDescription = () => {
                             <p>{services?.description.slice(0, 100)}
                                 <Link
                                     to={`/serviceDescription/${services?.id}`}
-                                    className="text-teal-600 font-semibold"> Read more....</Link></p>
+                                    className="text-teal-600 font-semibold"> Read more</Link></p>
                             :
                             <p>{services?.description}</p>
                     }

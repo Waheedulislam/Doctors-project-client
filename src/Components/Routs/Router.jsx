@@ -5,7 +5,6 @@ import About from "../../Pages/About";
 import Contact from "../../Pages/Contact";
 import Login from "../Login-Regester/Login";
 import Register from "../Login-Regester/Register";
-import Doctors from "../../Pages/Doctors";
 import HomeTwo from "../../Pages/HomeTwo";
 import HomeOne from "../../Pages/HomeOne";
 import DashboardLayout from "../../Layout/DashboardLayout";
@@ -13,6 +12,8 @@ import PrivateRoute from "./PrivateRoute";
 import DashboardHome from "../../Pages/DashboardPage/DashboardHome";
 import Services from "../../Pages/Services/Services";
 import SeeAllServiceDescription from "../../Pages/SeeAllServiceDescription";
+import Doctor from "../../Pages/Doctor/Doctor";
+import DoctorAppointment from "../../Pages/DoctorAppointment";
 
 const router = createBrowserRouter([
     {
@@ -49,7 +50,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/doctors',
-                element: <Doctors />
+                element: <Doctor />
+            },
+            {
+                path: '/doctorAppointment/:id',
+                element: <DoctorAppointment />
             },
             {
                 path: '/login',
