@@ -2,7 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import SingleServices from "./SingleServices";
 import { Link } from "react-router-dom";
-import { FaArrowRight, FaSearch } from "react-icons/fa";
+import { FaArrowLeft, FaSearch } from "react-icons/fa";
+import Process from "./Process";
 
 const Services = () => {
     const [services, setServices] = useState([]);
@@ -30,7 +31,7 @@ const Services = () => {
 
 
             <div className="text-center  mb-10">
-                {/* <h1 className="font-bold mb-8 btn text-xl bg-teal-100 text-black hover:text-black hover:bg-teal-100 rounded-full">Service</h1> */}
+                <h1 className="font-bold mb-2 btn text-xl bg-teal-100 text-teal-700 hover:text-black hover:bg-teal-100 rounded-full">All Service List</h1>
 
                 <h1 className="text-5xl font-bold text-black">The  <span className='text-teal-600'>Best Quality </span>
                     Service </h1>
@@ -73,8 +74,11 @@ const Services = () => {
                 }
             </div>
             <div className="text-center">
-                <Link to='/' className=" btn text-center rounded-full bg-teal-600 text-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg ">See All Services <FaArrowRight className="my-1.5 font-semibold" /></Link>
+                <Link to='/' className=" btn text-center rounded-full bg-teal-600 text-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg ">Back to Home Page <FaArrowLeft className="my-1.5 font-semibold" /></Link>
             </div>
+
+            {/* process  */}
+            <Process></Process>
 
         </div>
     );
