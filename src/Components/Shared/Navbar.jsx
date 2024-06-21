@@ -52,7 +52,7 @@ const Navbar = () => {
                                                 isActive
                                                     ? 'text-teal-700  bg-base-100 text-lg border-none  hover:border-none hover:bg-white border-2  px-3  rounded-lg  font-medium'
                                                     : '  bg-white border-white border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
-                                            } to={"homepage/homeOne"}
+                                            } to={"/"}
                                         >
                                             Home 1
                                         </NavLink>
@@ -163,7 +163,7 @@ const Navbar = () => {
                                                     ? 'text-teal-700  bg-base-100 text-lg border-none  hover:border-none hover:bg-white border-2  px-3  rounded-lg  font-medium'
                                                     : '  bg-white border-white border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
                                             }
-                                            to={"homepage/homeOne"}
+                                            to={"/"}
                                         >
                                             Home 1
                                         </NavLink>

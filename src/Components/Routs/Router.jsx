@@ -6,12 +6,13 @@ import Contact from "../../Pages/Contact";
 import Login from "../Login-Regester/Login";
 import Register from "../Login-Regester/Register";
 import Doctors from "../../Pages/Doctors";
-import Services from "../../Pages/Services";
 import HomeTwo from "../../Pages/HomeTwo";
 import HomeOne from "../../Pages/HomeOne";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import PrivateRoute from "./PrivateRoute";
 import DashboardHome from "../../Pages/DashboardPage/DashboardHome";
+import Services from "../../Pages/Services/Services";
+import SeeAllServiceDescription from "../../Pages/SeeAllServiceDescription";
 
 const router = createBrowserRouter([
     {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
             {
                 path: '/service',
                 element: <Services />
+            },
+            {
+                path: '/serviceDescription/:id',
+                element: <SeeAllServiceDescription />
             },
             {
                 path: '/doctors',
