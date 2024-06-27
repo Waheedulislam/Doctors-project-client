@@ -6,7 +6,6 @@ import Contact from "../../Pages/Contact";
 import Login from "../Login-Regester/Login";
 import Register from "../Login-Regester/Register";
 import HomeTwo from "../../Pages/HomeTwo";
-import HomeOne from "../../Pages/HomeOne";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import PrivateRoute from "./PrivateRoute";
 import DashboardHome from "../../Pages/DashboardPage/DashboardHome";
@@ -23,10 +22,6 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />
-            },
-            {
-                path: 'homepage/homeOne',
-                element: <HomeOne />
             },
             {
                 path: 'homepage/homeTwo',

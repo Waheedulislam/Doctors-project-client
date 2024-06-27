@@ -192,5 +192,55 @@
             "schedule": "Mon-Sat, 9 AM - 5 PM",
             "imgUrl": "https://cdn3.iconfinder.com/data/icons/dental-premium-color-symbol/91/Dental_-_Tooth_-_Dentist_-_Dentistry_04-512.png"
         }
+    ],
+    "PatientReview": [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "rating": 4.5,
+            "comment": "Great experience with this clinic. The staff was friendly and the doctor was very knowledgeable. Their top-notch medical services, caring staff, and commitment to patient well-being make them my first choice for healthcare. I highly recommend Doctorate!",
+            "date": "2024-06-21",
+            "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToonwNT4zbwCyq-k-qAzXexPn6URz3gT4BxQ&s"
+        },
+        {
+            "id": 2,
+            "name": "Jane Smith",
+            "rating": 5,
+            "comment": "Excellent service! The facility was clean and the doctors were attentive. Highly recommend.Doctorate surpassed all my expectations. Their exceptional medical services, compassionate staff, and dedication to patient welfare solidify them as my preferred healthcare provider.",
+            "date": "2024-06-20",
+            "imageUrl": "https://t4.ftcdn.net/jpg/06/53/65/05/360_F_653650577_XkwBMCvM0D9goMd0a9bgJfMeEHDvkSZs.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Michael Johnson",
+            "rating": 4,
+            "comment": "Overall good experience. The wait time was minimal and the treatment was effective.I was thoroughly impressed by Doctorate. Their exceptional medical services, compassionate staff, and dedication to patient welfare have firmly established them as my preferred healthcare.",
+            "date": "2024-06-19",
+            "imageUrl": "https://www.apetogentleman.com/wp-content/uploads/2021/10/Gentleman-720x864.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Emily Brown",
+            "rating": 3.5,
+            "comment": "The staff was nice but the appointment scheduling was a bit disorganized.Doctorate exceeded my expectations. Their top-notch medical services, caring staff, and commitment to patient well-being make them my first choice for healthcare. I highly recommend Doctorate!Star IconStar IconStar IconStar IconStar Icon",
+            "date": "2024-06-18",
+            "imageUrl": "https://images.pexels.com/photos/938639/pexels-photo-938639.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+        },
+        {
+            "id": 5,
+            "name": "David Lee",
+            "rating": 5,
+            "comment": "Exceptional care! The doctor took the time to explain everything clearly. Very satisfied.Their exceptional medical services, compassionate staff, and dedication to patient welfare solidify them as my preferred healthcare provider.",
+            "date": "2024-06-17",
+            "imageUrl": "https://t4.ftcdn.net/jpg/03/17/72/03/360_F_317720355_sn87YEwDHHGMMYYmxiS3o3Hinkt1T3sB.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Sarah Wilson",
+            "rating": 4,
+            "comment": "Good service overall. The facility was clean and the staff was professional.Their top-notch medical services, caring staff, and commitment to patient well-being make them my first choice for healthcare. I highly recommend Doctorate!",
+            "date": "2024-06-16",
+            "imageUrl": "https://img.freepik.com/free-photo/smiley-man-relaxing-outdoors_23-2148739334.jpg"
+        }
     ]
 }
