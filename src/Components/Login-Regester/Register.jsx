@@ -29,7 +29,7 @@ const Register = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const [registerError, setRegisterError] = useState('');
-    const formLocation = location?.state?.form?.pathname || '/';
+    const formLocation = location?.state?.from?.pathname || '/';
 
     const handleWithSignUp = async (e) => {
         e.preventDefault();

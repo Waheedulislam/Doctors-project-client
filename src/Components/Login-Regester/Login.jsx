@@ -27,6 +27,7 @@ const Login = () => {
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const [loginError, setLoginError] = useState('');
+
     const from = location?.state?.from?.pathname || '/'
 
     const handleWithSingIn = (e) => {
@@ -45,6 +46,7 @@ const Login = () => {
         }
         signInWithEmailAndPassword(email, password)
     }
+
     useEffect(() => {
         if (user) {
             navigate(from, { replace: true })

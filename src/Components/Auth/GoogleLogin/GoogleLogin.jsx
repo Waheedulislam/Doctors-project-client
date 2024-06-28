@@ -6,9 +6,11 @@ import { useEffect } from 'react';
 const GoogleLogin = () => {
     const [signInWithGoogle, user] = useSignInWithGoogle(auth);
     const location = useLocation();
+    console.log(location)
     const navigate = useNavigate();
 
-    const formLocation = location?.state?.form?.pathname || '/'
+    const formLocation = location?.state?.from?.pathname || '/'
+    console.log(formLocation)
     const handleSignInGoogle = () => {
         signInWithGoogle()
     }
