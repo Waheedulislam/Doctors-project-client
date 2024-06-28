@@ -6,7 +6,7 @@ const HomeCheckUp = () => {
 
                 <div className="hero-content flex-col lg:flex-row-reverse">
 
-                    <img className='lg:w-2/4' src={checkUp} />
+                    <img className='lg:w-2/4 rounded-lg shadow-2xl' src={checkUp} />
                     <div>
                         <h1 className="text-5xl font-bold">We provide high <br /> quality & <span className='text-teal-700'>cost effective</span> services</h1>
                         <ul className='my-10 ' style={{ listStyleType: 'disc' }}>

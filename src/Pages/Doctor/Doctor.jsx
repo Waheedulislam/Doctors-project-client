@@ -5,6 +5,7 @@ import { FaArrowLeft, FaSearch } from "react-icons/fa";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+
 const Doctor = () => {
     const [doctors, setDoctors] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
@@ -31,7 +32,7 @@ const Doctor = () => {
 
 
             <div className="text-center  mb-10">
-                <h1 className="font-bold mb-2 btn text-xl bg-teal-100 text-teal-700 hover:text-black hover:bg-teal-100 rounded-full">All Service List</h1>
+
 
                 <h1 className="text-5xl font-bold text-black">Our  <span className='text-teal-600'>Best Quality </span>
                     Doctors </h1>

@@ -1,8 +1,12 @@
 import doctorateIcon from "../../assets/image/doctor.png";
+import footer from '../../assets/image/footer.png'
 const Footer = () => {
     return (
-        <div>
-            <footer className="footer p-10 bg-base-200 text-base-content">
+        <div className="bg-base-200">
+            <footer style={{
+                background: `url(${footer})`,
+                backgroundSize: 'cover'
+            }} className="footer p-10 text-base-content">
                 <aside>
                     <img src={doctorateIcon} className="h-20 w-20" alt="" />
                     <p className="text-xl">
@@ -33,7 +37,15 @@ const Footer = () => {
                     <a className="link link-hover font-semibold">Privacy policy</a>
                     <a className="link link-hover font-semibold">Cookie policy</a>
                 </nav>
+
             </footer>
+
+            <div>
+                <div className='my-10 pb-10 text-center font-bold text-2xl'>
+                    <p ><small>Copyright © Doctorate | {(new Date().getFullYear())} - All Rights Reserved</small></p>
+                </div>
+            </div>
+
         </div>
     );
 };

@@ -13,6 +13,7 @@ import Services from "../../Pages/Services/Services";
 import SeeAllServiceDescription from "../../Pages/SeeAllServiceDescription";
 import Doctor from "../../Pages/Doctor/Doctor";
 import DoctorAppointment from "../../Pages/DoctorAppointment";
+import Appointment from "../../Pages/Appointment/Appointment";
 
 const router = createBrowserRouter([
     {
@@ -58,6 +59,12 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register />
+            },
+            {
+                path: '/appointment',
+                element: <PrivateRoute>
+                    <Appointment></Appointment>
+                </PrivateRoute>
             },
 
         ]
