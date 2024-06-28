@@ -1,4 +1,4 @@
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import doctorateIcon from '../assets/image/doctor.png'
 import auth from "../Components/Firebase/firebase.config";
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
@@ -45,12 +45,69 @@ const DashboardLayout = () => {
 
                         {/* Sidebar content here */}
                         <div className="mb-24">
-                            <li><a>Sidebar Item 1</a></li>
-                            <li><a>Sidebar Item 2</a></li>
+                            <li><NavLink
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? 'text-teal-700  bg-base-100 text-lg border-none  hover:border-none hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                        : '  bg-white border-white border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                } to={"/dashboard"}
+                            >
+                                Home 1
+                            </NavLink>
+                            </li>
+
+                            <li className="mt-2">
+                                <NavLink
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? 'text-teal-700 bg-white  border-teal-600  text-lg    hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                            : '  bg-white border-white border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                    }
+                                    to={'/Dashboard/manage-all-Doctors'}
+                                >
+                                    Manage-All-Doctors
+                                </NavLink>
+                            </li>
+                            <li className="mt-2">
+                                <NavLink
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? 'text-teal-700 bg-white  border-teal-600  text-lg    hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                            : '  bg-white border-white border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                    }
+                                    to={'/Dashboard/manage-all-Service'}
+                                >
+                                    Manage-All-Service
+                                </NavLink>
+                            </li>
+                            <li className="mt-2">
+                                <NavLink
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? 'text-teal-700 bg-white  border-teal-600  text-lg    hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                            : '  bg-white border-teal-600 border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                    }
+                                    to={'/Dashboard/add-Doctors'}
+                                >
+                                    Add Doctors
+                                </NavLink>
+                            </li>
+                            <li className="mt-2">
+                                <NavLink
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? 'text-teal-700 bg-white  border-teal-600  text-lg    hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                            : '  bg-white border-teal-600 border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                    }
+                                    to={'/Dashboard/add-Services'}
+                                >
+                                    Add Services
+                                </NavLink>
+                            </li>
                         </div>
 
                         {/* Logout */}
-                        <div className="flex mt-96 justify-center gap-28">
+                        <div className="flex  justify-center gap-28">
                             <Link className="btn rounded-xl bg-teal-600 text-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg " to={'/'}>Home</Link>
                             <button onClick={handleSignOut} className="btn btn-error text-white" >
                                 Log Out

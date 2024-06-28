@@ -8,7 +8,7 @@ const HomeDoctor = () => {
     const [doctors, setDoctors] = useState([]);
 
     useEffect(() => {
-        async function lodeBike() {
+        async function lode() {
             const data = await axios.get('http://localhost:3000/doctors')
 
             if (data?.status == 200) {
@@ -16,7 +16,7 @@ const HomeDoctor = () => {
             }
         }
 
-        lodeBike()
+        lode()
     }, [])
     return (
         <div>

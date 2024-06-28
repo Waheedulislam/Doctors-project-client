@@ -26,14 +26,14 @@ const DoctorAppointment = () => {
     return (
 
         <div>
-            <h1 className="text-5xl font-bold text-black text-center mt-10">Book an Appointment!</h1>
+            <h1 className="text-5xl font-bold text-black text-center mt-10">Book an Appointment..!</h1>
 
 
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse ">
                     <div className="text-center lg:w-2/4 lg:text-left lg:ml-10">
 
-                        <figure><img className="w-full mt-12 rounded-2xl" src={doctors?.image} alt="Shoes" /></figure>
+                        <figure><img className="w-full h-96 mt-12 rounded-2xl" src={doctors?.image} alt="Shoes" /></figure>
                         <h2 className="card-title my-4 text-3xl hover:text-teal-600 font-bold justify-center text-center">
                             {doctors?.name}
 
@@ -60,26 +60,26 @@ const DoctorAppointment = () => {
 
                         <div className="lg:flex justify-start">
                             <div className="mt-4 flex ">
-                                <FcCallback className="w-10 h-10" />
-                                <spa className='font-semibold text-xl '><span className="hover:text-teal-500 "> (505) 555-0125</span>
+                                <FcCallback className="w-8 h-8" />
+                                <spa className='font-semibold text-xl '><span className="hover:text-teal-500 "> (+880) 1633-521872</span>
                                 </spa>
                             </div>
                             <div className="mt-4 flex ml-2">
-                                <MdMarkEmailRead className="w-10 h-10 text-teal-600" />
+                                <MdMarkEmailRead className="w-8 h-8 text-teal-600" />
                                 <spa className='font-semibold text-xl '><span className="hover:text-teal-500">doctorate123@gmail.com</span> <br />
                                 </spa>
                             </div>
                         </div>
                         <div className="flex text-2xl">
                             <MdLocationOn className="w-10 h-10 mt-2 text-teal-600" />
-                            <span className="my-4">Ashulia,Savar,Dhaka-(1314)</span>
+                            <span className="my-4 hover:text-teal-600">Ashulia,Savar,Dhaka-(1314)</span>
                         </div>
                     </div>
 
                     {/* From information  */}
 
                     <div className="card  bg-base-100  lg:w-2/4 shrink-0 shadow-2xl">
-                        <form className="card-body">
+                        <form className="card-body mt-10">
 
                             {/* Name/Phone number  */}
                             <div className="gap-2 flex justify-center">

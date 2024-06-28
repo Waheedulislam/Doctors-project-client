@@ -14,6 +14,10 @@ import SeeAllServiceDescription from "../../Pages/SeeAllServiceDescription";
 import Doctor from "../../Pages/Doctor/Doctor";
 import DoctorAppointment from "../../Pages/DoctorAppointment";
 import Appointment from "../../Pages/Appointment/Appointment";
+import AddDoctors from "../../Pages/DashboardPage/ManageDoctors/AddDoctors";
+import ManageDoctors from "../../Pages/DashboardPage/ManageDoctors/ManageDoctors";
+import ManageAllService from "../../Pages/DashboardPage/ManageAllService/ManageAllService";
+import AddAllServices from "../../Pages/DashboardPage/ManageAllService/AddAllServices";
 
 const router = createBrowserRouter([
     {
@@ -83,6 +87,22 @@ const router = createBrowserRouter([
             {
                 index: 'dashboard',
                 element: <DashboardHome />
+            },
+            {
+                path: 'add-Doctors',
+                element: <AddDoctors />
+            },
+            {
+                path: 'manage-all-Doctors',
+                element: <ManageDoctors></ManageDoctors>
+            },
+            {
+                path: 'manage-all-Service',
+                element: <ManageAllService />
+            },
+            {
+                path: 'add-Services',
+                element: <AddAllServices />
             },
         ]
     }

@@ -7,7 +7,7 @@
             "specialty": "Cardiologist",
             "experience": "15 years",
             "contact": "123-456-7890",
-            "email": "john.doe@example.com",
+            "email": "john.doe@gmail.com",
             "rating": "4.8 (112 review)"
         },
         {
@@ -17,7 +17,7 @@
             "specialty": "Pediatrician",
             "experience": "10 years",
             "contact": "321-654-0987",
-            "email": "jane.smith@example.com",
+            "email": "jane.smith@gmail.com",
             "rating": "4.9 (120 review)"
         },
         {
@@ -27,7 +27,7 @@
             "specialty": "Dermatologist",
             "experience": "12 years",
             "contact": "456-789-0123",
-            "email": "richard.roe@example.com",
+            "email": "richard.roe@gmail.com",
             "rating": "4.6 (110 review)"
         },
         {
@@ -37,7 +37,7 @@
             "specialty": "Neurologist",
             "experience": "18 years",
             "contact": "654-321-9870",
-            "email": "emily.davis@example.com",
+            "email": "emily.davis@gmail.com",
             "rating": "4.7 (115 review)"
         },
         {
@@ -47,7 +47,7 @@
             "specialty": "Orthopedic Surgeon",
             "experience": "20 years",
             "contact": "789-012-3456",
-            "email": "michael.brown@example.com",
+            "email": "michael.brown@gmail.com",
             "rating": "4.4 (138 review)"
         },
         {
@@ -57,7 +57,7 @@
             "specialty": "Gynecologist",
             "experience": "14 years",
             "contact": "012-345-6789",
-            "email": "sarah.wilson@example.com",
+            "email": "sarah.wilson@gmail.com",
             "rating": "4.8 (112 review)"
         },
         {
@@ -67,7 +67,7 @@
             "specialty": "Ophthalmologist",
             "experience": "11 years",
             "contact": "210-987-6543",
-            "email": "william.taylor@example.com",
+            "email": "william.taylor@gmail.com",
             "rating": "4.6 (110 review)"
         },
         {
@@ -77,7 +77,7 @@
             "specialty": "Endocrinologist",
             "experience": "16 years",
             "contact": "321-098-7654",
-            "email": "patricia.martinez@example.com",
+            "email": "patrcia@gmail.com",
             "rating": "4.8 (160 review)"
         },
         {
@@ -87,7 +87,7 @@
             "specialty": "Psychiatrist",
             "experience": "9 years",
             "contact": "432-109-8765",
-            "email": "robert.garcia@example.com",
+            "email": "robert.garcia@gmail.com",
             "rating": "4.7 (180 review)"
         },
         {
@@ -97,7 +97,7 @@
             "specialty": "Dentist",
             "experience": "13 years",
             "contact": "543-210-9876",
-            "email": "linda.thompson@example.com",
+            "email": "linda.thompson@gmail.com",
             "rating": "4.5 (144 review)"
         }
     ],
@@ -107,7 +107,7 @@
             "serviceName": "Cardiology",
             "description": "Cardiology is the study of the heart. Cardiology is a branch of medicine that deals with disorders of the heart and the cardiovascular system. The field includes medical diagnosis and treatment of congenital heart defects, coronary artery disease, heart failure, valvular heart disease, and electrophysiology.",
             "contact": "123-456-7890",
-            "email": "cardio@healthhospital.com",
+            "email": "doctorate123@gmail.com",
             "schedule": "Mon-Fri, 9 AM - 5 PM",
             "imgUrl": "https://static.vecteezy.com/system/resources/previews/006/397/893/non_2x/cardiology-icon-cardiovascular-icon-free-vector.jpg"
         },
@@ -116,7 +116,7 @@
             "serviceName": "Pediatrics",
             "description": "Pediatrics (also spelled paediatrics or pædiatrics) is the branch of medicine that involves the medical care of infants, children, adolescents, and young adults. In the United Kingdom, paediatrics covers many of their youth until the age of 18.[1] The American Academy of Pediatrics recommends people seek pediatric care through the age of 21, but some pediatric subspecialists continue to care for adults up to 25.[2][3] Worldwide age limits of pediatrics have been trending upward year after year.[4] A medical doctor who specializes in this area is known as a pediatrician, or paediatrician.",
             "contact": "321-654-0987",
-            "email": "pediatrics@childcarecenter.com",
+            "email": "doctorate123@gmail.com",
             "schedule": "Mon-Fri, 8 AM - 4 PM",
             "imgUrl": "https://static.vecteezy.com/system/resources/previews/002/165/358/original/pediatrics-blue-concept-icon-vector.jpg"
         },
@@ -125,7 +125,7 @@
             "serviceName": "Dermatology",
             "description": "Dermatology is the branch of medicine dealing with the skin. It is a speciality with both medical and surgical aspects. A dermatologist is a specialist medical doctor who manages diseases related to skin, hair, nails, and some cosmetic problems.",
             "contact": "456-789-0123",
-            "email": "dermatology@skinsolutions.com",
+            "email": "doctorate123@gmail.com",
             "schedule": "Mon-Sat, 10 AM - 6 PM",
             "imgUrl": "https://img.freepik.com/premium-vector/hair-treatment-care-dermatology-logo_579179-937.jpg"
         },
@@ -134,7 +134,7 @@
             "serviceName": "Neurology ",
             "description": "Neurology is the branch of medicine concerned with the study and treatment of disorders of the nervous system. The nervous system is a complex, sophisticated system that regulates and coordinates body activities. It has two major divisions: Central nervous system: the brain and spinal cord.",
             "contact": "654-321-9870",
-            "email": "neurology@neurohealth.com",
+            "email": "doctorate123@gmail.com",
             "schedule": "Mon-Fri, 9 AM - 5 PM",
             "imgUrl": "https://www.creativefabrica.com/wp-content/uploads/2021/06/13/Neurology-Icon-Graphics-13351746-1-1-580x385.jpg"
         },
@@ -143,7 +143,7 @@
             "serviceName": "Orthopedics",
             "description": "Orthopaedics (also called orthopaedic surgery) is the medical specialty that focuses on injuries and diseases of your body's musculoskeletal system. This complex system, which includes your bones, joints, ligaments, tendons, muscles, and nerves, allows you to move, work, and be active.",
             "contact": "789-012-3456",
-            "email": "orthopedics@bonejointclinic.com",
+            "email": "doctorate123@gmail.com",
             "schedule": "Mon-Fri, 8 AM - 4 PM",
             "imgUrl": "https://static.vecteezy.com/system/resources/previews/012/967/642/non_2x/orthopedic-icon-design-illustration-vector.jpg"
         },
@@ -152,7 +152,7 @@
             "serviceName": "Gynecology",
             "description": "Gynecology and obstetrics are twin subjects that deal with the female reproductive system. While obstetrics deals with pregnancy and its associated procedures and complications, gynaecology involves treating women who are not pregnant. Gynecology comprises of both medicine as well as surgical fields.",
             "contact": "012-345-6789",
-            "email": "gynecology@womenshealth.com",
+            "email": "doctorate123@gmail.com",
             "schedule": "Mon-Fri, 9 AM - 5 PM",
             "imgUrl": "https://t3.ftcdn.net/jpg/01/14/96/98/360_F_114969894_ctqwRxh3iQDoSDfBUZIWeSD6vVnh5OVX.jpg"
         },
@@ -161,7 +161,7 @@
             "serviceName": "Ophthalmology",
             "description": "Ophthalmology is a clinical and surgical specialty within medicine that deals with the diagnosis and treatment of eye disorders. A former term is oculism. An ophthalmologist is a physician who undergoes subspecialty training in medical and surgical eye care",
             "contact": "210-987-6543",
-            "email": "ophthalmology@visioncare.com",
+            "email": "doctorate123@gmail.com",
             "schedule": "Mon-Sat, 9 AM - 5 PM",
             "imgUrl": "https://as2.ftcdn.net/v2/jpg/03/04/56/59/1000_F_304565947_XxA16qDnYYbKbWMztvNAeYkLSCm4zByN.jpg"
         },
@@ -170,7 +170,7 @@
             "serviceName": "Endocrinology",
             "description": "Endocrinology is the study of hormones. Hormones are essential for our every-day survival. They control our temperature, sleep, mood, stress, growth and more. An endocrinologist is a doctor that treats diseases related to problems with hormones. A hormone is a chemical messenger that travels from one cell to another.",
             "contact": "321-098-7654",
-            "email": "endocrinology@endocrinehealth.com",
+            "email": "doctorate123@gmail.com",
             "schedule": "Mon-Fri, 9 AM - 5 PM",
             "imgUrl": "https://www.shutterstock.com/image-vector/stethoscope-thyroid-gland-vector-illustration-260nw-2042250086.jpg"
         },
@@ -179,7 +179,7 @@
             "serviceName": "Psychiatry",
             "description": "Psychiatry is the medical specialty devoted to the diagnosis, prevention, and treatment of deleterious mental conditions. These include various matters related to mood, behaviour, cognition, perceptions, and emotions",
             "contact": "432-109-8765",
-            "email": "psychiatry@mentalhealth.com",
+            "email": "doctorate123@gmail.com",
             "schedule": "Mon-Fri, 10 AM - 6 PM",
             "imgUrl": "https://thumbs.dreamstime.com/b/mind-tree-logo-illustration-art-background-42390544.jpg"
         },
@@ -241,6 +241,48 @@
             "comment": "Good service overall. The facility was clean and the staff was professional.Their top-notch medical services, caring staff, and commitment to patient well-being make them my first choice for healthcare. I highly recommend Doctorate!",
             "date": "2024-06-16",
             "imageUrl": "https://img.freepik.com/free-photo/smiley-man-relaxing-outdoors_23-2148739334.jpg"
+        }
+    ],
+    "doctorSpecialties": [
+        {
+            "id": "1",
+            "title": "Cardiology"
+        },
+        {
+            "id": "2",
+            "title": "Neurology"
+        },
+        {
+            "id": "3",
+            "title": "Pediatrics"
+        },
+        {
+            "id": "4",
+            "title": "Orthopedics"
+        },
+        {
+            "id": "5",
+            "title": "Dermatology"
+        },
+        {
+            "id": "6",
+            "title": "Ophthalmology"
+        },
+        {
+            "id": "7",
+            "title": "Gynecology"
+        },
+        {
+            "id": "8",
+            "title": "Psychiatry"
+        },
+        {
+            "id": "9",
+            "title": "Oncology"
+        },
+        {
+            "id": "10",
+            "title": "Gastroenterology"
         }
     ]
 }
