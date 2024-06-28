@@ -1,14 +1,14 @@
 import { FaCheckCircle } from "react-icons/fa";
 import { FcCallback } from "react-icons/fc";
-import { MdMarkEmailRead } from "react-icons/md";
+import { MdLocationOn, MdMarkEmailRead } from "react-icons/md";
 const Appointment = () => {
     return (
         <div>
             <div className="hero bg-base-200 min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse ">
                     <div className="text-center lg:w-2/4 lg:text-left lg:ml-10">
-                        <h1 className="text-5xl font-bold">Book an Appointment!</h1>
-                        <p className="py-6 font-semibold">
+                        <h1 className="text-5xl font-bold text-black">Book an Appointment!</h1>
+                        <p className="py-6 font-semibold text-black">
                             You can benefit from an expert medical consultation  - schedule an appointment now.
                         </p>
                         <ul className='my-3 ' >
@@ -21,20 +21,24 @@ const Appointment = () => {
                         </ul>
 
                         <div className="text-3xl mt-8 font-bold">
-                            Need Some Help? <span className="text-teal-500">Contact Us Today</span>
+                            Need Some Help? <span className="text-teal-600">Contact Us Today</span>
                         </div>
 
                         <div className="lg:flex justify-start">
                             <div className="mt-4 flex ">
-                                <FcCallback className="w-14 h-14" />
-                                <spa className='font-semibold text-xl '><span className="hover:text-teal-500"> (505) 555-0125</span> <br />
-                                    <span className="hover:text-teal-500">(316) 555-0116</span></spa>
+                                <FcCallback className="w-10 h-10" />
+                                <spa className='font-semibold text-xl '><span className="hover:text-teal-500 "> (505) 555-0125</span>
+                                </spa>
                             </div>
-                            <div className="mt-4 flex ">
-                                <MdMarkEmailRead className="w-14 h-14 text-red-400" />
+                            <div className="mt-4 flex ml-2">
+                                <MdMarkEmailRead className="w-10 h-10 text-teal-600" />
                                 <spa className='font-semibold text-xl '><span className="hover:text-teal-500">doctorate123@gmail.com</span> <br />
-                                    <span className="hover:text-teal-500">baoppyhossen1234@gmail.com</span></spa>
+                                </spa>
                             </div>
+                        </div>
+                        <div className="flex text-2xl">
+                            <MdLocationOn className="w-14 h-14 mt-2 text-teal-600" />
+                            <span className="my-4">Ashulia,Savar,Dhaka-(1314)</span>
                         </div>
                     </div>
 
@@ -84,12 +88,14 @@ const Appointment = () => {
 
                                 <input
                                     type="Date"
+                                    name="date"
                                     placeholder="Date"
                                     className="h-16 m-2 rounded-full input w-full input-bordered"
                                     required
                                 />
                                 <input
                                     type="Time"
+                                    name="time"
                                     placeholder="Time"
                                     className="h-16 m-2 rounded-full input w-full input-bordered "
                                     required
