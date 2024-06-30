@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const AddDoctors = () => {
 
@@ -7,13 +8,48 @@ const AddDoctors = () => {
 
     useEffect(() => {
         async function load() {
-            const data = await axios.get('http://localhost:3000/doctorSpecialties')
+            const data = await axios.get('http://localhost:5000/doctorSpecialties')
             if (data.status == 200) {
                 setSpecialty(data?.data)
             }
         }
         load();
     }, [])
+
+    const handleAddDoctor = async (e) => {
+        e.preventDefault();
+
+        const form = e.target;
+
+        const name = form.name.value;
+        const email = form.email.value;
+        const rating = form.rating.value;
+        const contact = form.contact.value;
+        const experience = form.experience.value;
+        const specialty = form.specialty.value;
+        const imageUrl = form.imageUrl.value;
+
+        const doctorInformation = {
+            name: name,
+            image: imageUrl,
+            email: email,
+            rating: rating,
+            contact: contact,
+            experience: experience,
+            specialty: specialty,
+        }
+
+
+        // Doctor post
+        const addDoctor = await axios.post('http://localhost:5000/doctors', doctorInformation);
+        if (addDoctor?.status == 200) {
+            console.log(addDoctor)
+            alert('Do you want to add a Doctor ?')
+        }
+        toast.success('Successfully Added a Doctor')
+
+        form.reset();
+    }
     return (
         <div>
             <div className="hero  min-h-screen">
@@ -31,23 +67,24 @@ const AddDoctors = () => {
 
                     <div className="card  bg-base-100 ml-5 mt-4 lg:w-2/4 shrink-0 shadow-2xl">
 
-                        <form className="card-body">
+                        <form onSubmit={handleAddDoctor} className="card-body">
 
                             {/* Name/specialty  */}
                             <div className="gap-2 flex justify-center">
 
                                 <input
                                     type="text"
+                                    name="name"
                                     placeholder="Your name"
                                     className="m-2 h-16 rounded-full input w-full input-bordered"
                                     required
                                 />
-                                <select name="category"
+                                <select
+                                    name="specialty"
                                     required
-                                    id=""
                                     className="m-2 h-16 rounded-full input w-full input-bordered">
                                     {
-                                        specialty?.map(specialty => <option key={specialty} value={specialty?.title}>{specialty?.title}</option>)
+                                        specialty?.map(specialty => <option key={specialty?._id} value={specialty?.title}>{specialty?.title}</option>)
                                     }
                                 </select>
                             </div>
@@ -58,13 +95,15 @@ const AddDoctors = () => {
 
                                 <input
                                     type="email"
+                                    name="email"
                                     placeholder="Email"
                                     className="h-16 m-2 rounded-full input w-full input-bordered"
                                     required
                                 />
                                 <input
                                     type="contact"
-                                    placeholder="contact"
+                                    name="contact"
+                                    placeholder="Contact Number"
                                     className="h-16 m-2 rounded-full input w-full input-bordered "
                                     required
                                 />
@@ -76,12 +115,14 @@ const AddDoctors = () => {
 
                                 <input
                                     type="text"
+                                    name="experience"
                                     placeholder="Experience"
                                     className="h-16 m-2 rounded-full input w-full input-bordered"
                                     required
                                 />
                                 <input
                                     type="text"
+                                    name="rating"
                                     placeholder="Rating"
                                     className="h-16 m-2 rounded-full input w-full input-bordered "
                                     required
@@ -92,18 +133,9 @@ const AddDoctors = () => {
                             <div >
                                 <input
                                     type="text"
+                                    name="imageUrl"
                                     placeholder="Image Url"
                                     className="h-16 m-2 rounded-full input w-full input-bordered"
-                                    required
-                                />
-                            </div>
-
-                            {/* Description  */}
-                            <div >
-                                <input
-                                    type="text"
-                                    placeholder="Write your message..."
-                                    className="h-28 m-2 rounded-2xl input w-full input-bordered"
                                     required
                                 />
                             </div>

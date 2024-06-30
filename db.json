@@ -235,43 +235,33 @@
     ],
     "doctorSpecialties": [
         {
-            "id": "1",
             "title": "Cardiology"
         },
         {
-            "id": "2",
             "title": "Neurology"
         },
         {
-            "id": "3",
             "title": "Pediatrics"
         },
         {
-            "id": "4",
             "title": "Orthopedics"
         },
         {
-            "id": "5",
             "title": "Dermatology"
         },
         {
-            "id": "6",
             "title": "Ophthalmology"
         },
         {
-            "id": "7",
             "title": "Gynecology"
         },
         {
-            "id": "8",
             "title": "Psychiatry"
         },
         {
-            "id": "9",
             "title": "Oncology"
         },
         {
-            "id": "10",
             "title": "Gastroenterology"
         }
     ]

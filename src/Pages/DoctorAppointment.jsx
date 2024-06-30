@@ -12,6 +12,7 @@ const DoctorAppointment = () => {
     console.log(doctors)
 
     useEffect(() => {
+        // doctor get
         async function lode() {
             const data = await axios.get(`http://localhost:5000/doctors/${id}`)
             console.log(data)
