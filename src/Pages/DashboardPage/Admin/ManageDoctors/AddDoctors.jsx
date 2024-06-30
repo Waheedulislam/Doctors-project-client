@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 const AddDoctors = () => {
 
     const [specialty, setSpecialty] = useState();
-
     useEffect(() => {
         async function load() {
             const data = await axios.get('http://localhost:5000/doctorSpecialties')
@@ -41,12 +40,22 @@ const AddDoctors = () => {
 
 
         // Doctor post
-        const addDoctor = await axios.post('http://localhost:5000/doctors', doctorInformation);
-        if (addDoctor?.status == 200) {
-            console.log(addDoctor)
-            alert('Do you want to add a Doctor ?')
+        const userConfirmed = window.confirm("Are you sure you want to add a Doctor?");
+        if (userConfirmed) {
+            const addDoctor = await axios.post('http://localhost:5000/doctors', doctorInformation);
+            try {
+                if (addDoctor?.status == 200) {
+                    console.log(addDoctor)
+                    alert('Do you want to add a Doctor ?')
+                }
+                toast.success('Successfully Added a Doctor')
+            } catch (error) {
+                console.error("There was an error creating the appointment!", error);
+                alert("Failed to create appointment. Please try again.");
+            }
+        } else {
+            alert("Appointment creation cancelled.");
         }
-        toast.success('Successfully Added a Doctor')
 
         form.reset();
     }

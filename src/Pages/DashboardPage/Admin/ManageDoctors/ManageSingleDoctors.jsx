@@ -7,8 +7,8 @@ const ManageSingleDoctors = ({ doctor }) => {
     return (
         <div className="card grid w-80  bg-base-100 shadow-xl">
             <figure><img className="w-full h-80" src={doctor?.image} alt="Shoes" /></figure>
-            <div className="card-body">
-                <h2 className="card-title text-2xl hover:text-teal-600 font-bold ">
+            <div className="card-body  ">
+                <h2 className="card-title text-2xl  hover:text-teal-600 font-bold ">
                     {doctor?.name}
 
                 </h2>
@@ -20,10 +20,13 @@ const ManageSingleDoctors = ({ doctor }) => {
                     <span className="font-bold">Experience :</span>  {doctor?.experience}
 
                 </h2>
-                <h2 className="flex justify-items-center">
-                    <span className="font-bold flex">Email :<MdEmail className="text-teal-500 my-1 mx-1" /></span>    {doctor?.email}
 
-                </h2>
+                <div className="flex justify-items-center">
+                    <span className="font-bold  flex ">Email :<MdEmail className="text-teal-500 my-1 mx-1" />
+                    </span> {doctor?.email.slice(0, 20)}
+                </div>
+
+
                 <h2 className="flex justify-items-center">
                     <span className="font-bold flex ">Rating :<FaStar className="text-amber-500 my-1 mx-1" /></span>   {doctor?.rating}
 
