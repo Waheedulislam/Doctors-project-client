@@ -4,6 +4,12 @@ import auth from "../Components/Firebase/firebase.config";
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import { useEffect } from "react";
+import { FaAlignJustify, FaHome, FaUsers } from "react-icons/fa";
+import { CiServer } from "react-icons/ci";
+import { FaPrescriptionBottleMedical, FaUserDoctor } from "react-icons/fa6";
+import { MdContactMail, MdMenuOpen, MdNoteAlt } from "react-icons/md";
+import { IoIosApps } from "react-icons/io";
+import { GiHypodermicTest } from "react-icons/gi";
 
 const DashboardLayout = () => {
     const [user] = useAuthState(auth);
@@ -22,6 +28,10 @@ const DashboardLayout = () => {
             navigate('/')
         }
     }, [user, navigate])
+
+    // To do isAdmin
+    const isAdmin = true;
+
     return (
         <div>
             <div className="drawer lg:drawer-open">
@@ -44,66 +54,174 @@ const DashboardLayout = () => {
                         </div>
 
                         {/* Sidebar content here */}
-                        <div className="mb-24">
-                            <li><NavLink
-                                className={({ isActive }) =>
-                                    isActive
-                                        ? 'text-teal-700  bg-base-100 text-lg border-none  hover:border-none hover:bg-white border-2  px-3  rounded-lg  font-medium'
-                                        : '  bg-white border-white border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
-                                } to={"/dashboard"}
-                            >
-                                Home 1
-                            </NavLink>
-                            </li>
+                        <div className="mb-10">
+                            <ul>
+                                {
+                                    isAdmin ?
+                                        <>
+                                            <li><NavLink
+                                                className={({ isActive }) =>
+                                                    isActive
+                                                        ? 'text-teal-700  bg-base-100 text-lg border-none  hover:border-none hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                                        : '  bg-white border-white border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                                } to={"/dashboard/admin-Home"}
+                                            >
+                                                <FaHome /> Admin Home
+                                            </NavLink>
+                                            </li>
 
-                            <li className="mt-2">
-                                <NavLink
-                                    className={({ isActive }) =>
-                                        isActive
-                                            ? 'text-teal-700 bg-white  border-teal-600  text-lg    hover:bg-white border-2  px-3  rounded-lg  font-medium'
-                                            : '  bg-white border-white border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
-                                    }
-                                    to={'/Dashboard/manage-all-Doctors'}
-                                >
-                                    Manage-All-Doctors
-                                </NavLink>
-                            </li>
-                            <li className="mt-2">
-                                <NavLink
-                                    className={({ isActive }) =>
-                                        isActive
-                                            ? 'text-teal-700 bg-white  border-teal-600  text-lg    hover:bg-white border-2  px-3  rounded-lg  font-medium'
-                                            : '  bg-white border-white border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
-                                    }
-                                    to={'/Dashboard/manage-all-Service'}
-                                >
-                                    Manage-All-Service
-                                </NavLink>
-                            </li>
-                            <li className="mt-2">
-                                <NavLink
+                                            <li className="mt-2">
+                                                <NavLink
+                                                    className={({ isActive }) =>
+                                                        isActive
+                                                            ? 'text-teal-700 bg-white  border-teal-600  text-lg    hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                                            : '  bg-white border-white border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                                    }
+                                                    to={'/Dashboard/manage-all-Doctors'}
+                                                >
+                                                    <FaAlignJustify />  Manage-All-Doctors
+                                                </NavLink>
+                                            </li>
+                                            <li className="mt-2">
+                                                <NavLink
+                                                    className={({ isActive }) =>
+                                                        isActive
+                                                            ? 'text-teal-700 bg-white  border-teal-600  text-lg    hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                                            : '  bg-white border-white border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                                    }
+                                                    to={'/Dashboard/manage-all-Service'}
+                                                >
+                                                    <CiServer />  Manage-All-Service
+                                                </NavLink>
+                                            </li>
+                                            <li className="mt-2">
+                                                <NavLink
+                                                    className={({ isActive }) =>
+                                                        isActive
+                                                            ? 'text-teal-700 bg-white  border-teal-600  text-lg    hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                                            : '  bg-white border-teal-600 border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                                    }
+                                                    to={'/Dashboard/add-Doctors'}
+                                                >
+                                                    <FaUserDoctor /> Add Doctors
+                                                </NavLink>
+                                            </li>
+                                            <li className="mt-2">
+                                                <NavLink
+                                                    className={({ isActive }) =>
+                                                        isActive
+                                                            ? 'text-teal-700 bg-white  border-teal-600  text-lg    hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                                            : '  bg-white border-teal-600 border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                                    }
+                                                    to={'/Dashboard/add-Services'}
+                                                >
+                                                    <FaUsers />  All Users
+                                                </NavLink>
+                                            </li>
+                                        </> :
+
+                                        // user rout 
+                                        <>
+                                            <li >
+                                                <NavLink
+                                                    className={({ isActive }) =>
+                                                        isActive
+                                                            ? 'text-teal-700 bg-white  border-teal-600  text-lg    hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                                            : '  bg-white border-teal-600 border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                                    } to={"/dashboard/user-Home"}
+                                                >
+                                                    <FaHome /> User Home
+                                                </NavLink>
+                                            </li>
+                                            <li className='mt-2'><NavLink
+                                                className={({ isActive }) =>
+                                                    isActive
+                                                        ? 'text-teal-700 bg-white  border-teal-600  text-lg    hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                                        : '  bg-white border-teal-600 border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                                } to={"/dashboard/User-Appointment"}
+                                            >
+                                                <IoIosApps /> Appointments
+                                            </NavLink>
+                                            </li>
+                                            <li className='mt-2'><NavLink
+                                                className={({ isActive }) =>
+                                                    isActive
+                                                        ? 'text-teal-700 bg-white  border-teal-600  text-lg    hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                                        : '  bg-white border-teal-600 border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                                } to={"/dashboard/User-prescription"}
+                                            >
+                                                <FaPrescriptionBottleMedical /> Prescription
+                                            </NavLink>
+                                            </li>
+                                            <li className='mt-2'><NavLink
+                                                className={({ isActive }) =>
+                                                    isActive
+                                                        ? 'text-teal-700 bg-white  border-teal-600  text-lg    hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                                        : '  bg-white border-teal-600 border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                                } to={"/dashboard/User-MedicalTest"}
+                                            >
+                                                <GiHypodermicTest /> Medical Test
+                                            </NavLink>
+                                            </li>
+                                            <li className='mt-2'><NavLink
+                                                className={({ isActive }) =>
+                                                    isActive
+                                                        ? 'text-teal-700 bg-white  border-teal-600  text-lg    hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                                        : '  bg-white border-teal-600 border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                                } to={"/dashboard/User-Health-Record"}
+                                            >
+                                                <MdNoteAlt /> Health Record
+                                            </NavLink>
+                                            </li>
+                                            <li className='mt-2'><NavLink
+                                                className={({ isActive }) =>
+                                                    isActive
+                                                        ? 'text-teal-700 bg-white  border-teal-600  text-lg    hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                                        : '  bg-white border-teal-600 border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                                } to={"/dashboard/User-Add-Review"}
+                                            >
+                                                <FaHome /> Add Review
+                                            </NavLink>
+                                            </li>
+                                        </>
+                                }
+
+                                <div className="divider"></div>
+
+                                {/* shared NavLink */}
+
+                                <li className="mt-2">
+                                    <NavLink
+                                        className={({ isActive }) =>
+                                            isActive
+                                                ? 'text-teal-700  bg-base-100 text-lg border-none  hover:border-none hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                                : '  bg-white border-white border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                        } to={"/dashboard"}
+                                    >
+                                        <FaHome />Home
+                                    </NavLink>
+                                </li>
+                                <li className="mt-2"><NavLink
                                     className={({ isActive }) =>
                                         isActive
                                             ? 'text-teal-700 bg-white  border-teal-600  text-lg    hover:bg-white border-2  px-3  rounded-lg  font-medium'
                                             : '  bg-white border-teal-600 border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
-                                    }
-                                    to={'/Dashboard/add-Doctors'}
+                                    } to={"/dashboard/menu"}
                                 >
-                                    Add Doctors
+                                    <MdMenuOpen />Menu
                                 </NavLink>
-                            </li>
-                            <li className="mt-2">
-                                <NavLink
+                                </li>
+                                <li className="mt-2"><NavLink
                                     className={({ isActive }) =>
                                         isActive
                                             ? 'text-teal-700 bg-white  border-teal-600  text-lg    hover:bg-white border-2  px-3  rounded-lg  font-medium'
                                             : '  bg-white border-teal-600 border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
-                                    }
-                                    to={'/Dashboard/add-Services'}
+                                    } to={"/dashboard/contact"}
                                 >
-                                    Add Services
+                                    <MdContactMail />Contact
                                 </NavLink>
-                            </li>
+                                </li>
+                            </ul>
                         </div>
 
                         {/* Logout */}

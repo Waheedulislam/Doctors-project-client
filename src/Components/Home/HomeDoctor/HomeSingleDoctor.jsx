@@ -33,7 +33,7 @@ const HomeSingleDoctor = ({ doctor }) => {
 
                 <p>
                     <Link
-                        to={`/doctorAppointment/${doctor?.id}`}
+                        to={`/doctorAppointment/${doctor?._id}`}
                         className="btn text-center  bg-teal-600 text-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg w-full mt-2 "> Book Appointment <FaArrowRight className="my-1.5 font-semibold" /></Link>
                 </p>
             </div>

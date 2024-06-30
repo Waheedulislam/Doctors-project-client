@@ -13,7 +13,7 @@ const DoctorAppointment = () => {
 
     useEffect(() => {
         async function lode() {
-            const data = await axios.get(`http://localhost:3000/doctors/${id}`)
+            const data = await axios.get(`http://localhost:5000/doctors/${id}`)
             console.log(data)
             if (data?.status == 200) {
                 setDoctors(data?.data)

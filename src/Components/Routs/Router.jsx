@@ -14,10 +14,20 @@ import SeeAllServiceDescription from "../../Pages/SeeAllServiceDescription";
 import Doctor from "../../Pages/Doctor/Doctor";
 import DoctorAppointment from "../../Pages/DoctorAppointment";
 import Appointment from "../../Pages/Appointment/Appointment";
-import AddDoctors from "../../Pages/DashboardPage/ManageDoctors/AddDoctors";
-import ManageDoctors from "../../Pages/DashboardPage/ManageDoctors/ManageDoctors";
-import ManageAllService from "../../Pages/DashboardPage/ManageAllService/ManageAllService";
-import AddAllServices from "../../Pages/DashboardPage/ManageAllService/AddAllServices";
+import AddDoctors from "../../Pages/DashboardPage/Admin/ManageDoctors/AddDoctors";
+import ManageDoctors from "../../Pages/DashboardPage/Admin/ManageDoctors/ManageDoctors";
+import ManageAllService from "../../Pages/DashboardPage/Admin/ManageAllService/ManageAllService";
+import AddAllServices from "../../Pages/DashboardPage/Admin/ManageAllService/AddAllServices";
+import UserHome from "../../Pages/DashboardPage/User/UserHome";
+import AdminHome from "../../Pages/DashboardPage/Admin/AdminHome";
+import DashboardContact from "../../Pages/DashboardPage/DashboardContact";
+import DashboardMenu from "../../Pages/DashboardPage/DashboardMenu";
+import UserReview from "../../Pages/DashboardPage/User/UserReview/UserReview";
+import UserHealthRecord from "../../Pages/DashboardPage/User/UserHealthRecord/UserHeaalthRecord";
+import UserMedicalTest from "../../Pages/DashboardPage/User/UserMedicalTest/UserMedicalTest";
+import UserPrescription from "../../Pages/DashboardPage/User/UserPrescription/UserPrescription";
+import UserAppointment from "../../Pages/DashboardPage/User/UserAppointment/UserAppointment";
+
 
 const router = createBrowserRouter([
     {
@@ -88,6 +98,7 @@ const router = createBrowserRouter([
                 index: 'dashboard',
                 element: <DashboardHome />
             },
+            /////// Admin Rout /////////
             {
                 path: 'add-Doctors',
                 element: <AddDoctors />
@@ -103,6 +114,50 @@ const router = createBrowserRouter([
             {
                 path: 'add-Services',
                 element: <AddAllServices />
+            },
+
+            {
+                path: 'admin-Home',
+                element: <AdminHome />
+            },
+
+            {
+                path: 'All-Users',
+                element: <UserHome />
+            },
+            //////// user Route ////////
+            {
+                path: 'User-Home',
+                element: <UserHome />
+            },
+            {
+                path: 'User-Appointment',
+                element: <UserAppointment></UserAppointment>
+            },
+            {
+                path: 'User-Prescription',
+                element: <UserPrescription />
+            },
+            {
+                path: 'User-MedicalTest',
+                element: <UserMedicalTest />
+            },
+            {
+                path: 'User-Health-Record',
+                element: <UserHealthRecord></UserHealthRecord>
+            },
+            {
+                path: 'User-Add-Review',
+                element: <UserReview />
+            },
+            //////// public Route ///////
+            {
+                path: 'Contact',
+                element: <DashboardContact />
+            },
+            {
+                path: 'Menu',
+                element: <DashboardMenu />
             },
         ]
     }

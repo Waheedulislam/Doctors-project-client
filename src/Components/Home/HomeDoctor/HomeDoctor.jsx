@@ -9,7 +9,7 @@ const HomeDoctor = () => {
 
     useEffect(() => {
         async function lode() {
-            const data = await axios.get('http://localhost:3000/doctors')
+            const data = await axios.get('http://localhost:5000/doctors')
 
             if (data?.status == 200) {
                 setDoctors(data?.data)
@@ -34,7 +34,7 @@ const HomeDoctor = () => {
                         doctors?.slice(0, 6)?.map((doctor) =>
                         (
                             <HomeSingleDoctor
-                                key={doctor.id}
+                                key={doctor._id}
                                 doctor={doctor}
                             />
 

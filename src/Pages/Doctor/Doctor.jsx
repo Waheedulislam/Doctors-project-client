@@ -12,15 +12,15 @@ const Doctor = () => {
     console.log(searchTerm)
     console.log(doctors)
     useEffect(() => {
-        async function lodeBike() {
-            const data = await axios.get('http://localhost:3000/doctors')
+        async function lode() {
+            const data = await axios.get('http://localhost:5000/doctors')
             console.log(data)
             if (data?.status == 200) {
                 setDoctors(data?.data)
             }
         }
 
-        lodeBike()
+        lode()
     }, [])
     // Search Services
     const handleSearch = (event) => {
