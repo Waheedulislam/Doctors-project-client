@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 const ManageSingleService = ({ service, onDelete }) => {
 
     const handleDeleteService = async () => {
-        const userConfirmed = window.confirm('Are you sure you want to add a Service?')
+        const userConfirmed = window.confirm('Are you sure you want to Delete a Service?')
         console.log(userConfirmed)
         if (userConfirmed) {
             const DeleteService = await axios.delete(`http://localhost:5000/services/${service._id}`)

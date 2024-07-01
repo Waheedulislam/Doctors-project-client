@@ -19,6 +19,10 @@ const ManageDoctors = () => {
 
         lode()
     }, [])
+    // Doctor Delete handle
+    const handleDoctorDelete = (id) => {
+        setDoctors(doctors?.filter((doctor) => doctor._id !== id))
+    }
     // Search Services
     const handleSearch = (event) => {
         setSearchTerm(event.target.value);
@@ -64,8 +68,9 @@ const ManageDoctors = () => {
                     })?.map((doctor) =>
                     (
                         <ManageSingleDoctors
-                            key={doctor.id}
+                            key={doctor._id}
                             doctor={doctor}
+                            onDelete={handleDoctorDelete}
                         />
 
                     ))
