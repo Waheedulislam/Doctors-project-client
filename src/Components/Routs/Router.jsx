@@ -28,6 +28,8 @@ import UserMedicalTest from "../../Pages/DashboardPage/User/UserMedicalTest/User
 import UserPrescription from "../../Pages/DashboardPage/User/UserPrescription/UserPrescription";
 import UserAppointment from "../../Pages/DashboardPage/User/UserAppointment/UserAppointment";
 import AllUsers from "../../Pages/DashboardPage/Admin/AllUsers/AllUsers";
+import EditAllServices from "../../Pages/DashboardPage/Admin/ManageAllService/EditAllServices";
+import EditDoctor from "../../Pages/DashboardPage/Admin/ManageDoctors/EditDoctor";
 
 
 const router = createBrowserRouter([
@@ -116,7 +118,14 @@ const router = createBrowserRouter([
                 path: 'add-Services',
                 element: <AddAllServices />
             },
-
+            {
+                path: 'Edit-Services/:id',
+                element: <EditAllServices />
+            },
+            {
+                path: 'Edit-Doctor/:id',
+                element: <EditDoctor />
+            },
             {
                 path: 'admin-Home',
                 element: <AdminHome />

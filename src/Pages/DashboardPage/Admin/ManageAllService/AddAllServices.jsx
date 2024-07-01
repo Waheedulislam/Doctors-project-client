@@ -38,7 +38,7 @@ const AddAllServices = () => {
             description: description,
         }
         console.log(serviceInformation)
-        const userConfirmed = window.confirm('Are you sure you want to add a Service?')
+        const userConfirmed = window.confirm('Are you sure you want to Edit a Service?')
         console.log(userConfirmed)
 
         if (userConfirmed) {
@@ -53,7 +53,7 @@ const AddAllServices = () => {
                 alert("Failed to create Service. Please try again.");
             }
         } else {
-            alert("Doctor creation cancelled.");
+            alert("Service creation cancelled.");
         }
         form.reset();
     }

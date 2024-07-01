@@ -63,14 +63,14 @@ const ManageSingleService = ({ service, onDelete }) => {
                     service?.description?.length > 50 ?
                         <p>{service?.description.slice(0, 50)}
                             <Link
-                                to={`/serviceDescription/${service?.id}`}
-                                className="text-teal-600 my-4 font-semibold"> Read more....</Link></p>
+                                to={`/dashboard/Edit-Services/${service?._id}`}
+                                className="text-teal-600 my-4 font-semibold"> Edit more....</Link></p>
                         :
                         <p>{service?.description}</p>
                 }
                 <p>
                     <Link
-                        to={`/doctorAppointment/${service?.id}`}
+                        to={`/dashboard/Edit-Services/${service?._id}`}
                         className="btn text-center  bg-teal-600 text-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg w-full mt-2 "> Edit Service <FaArrowRight className="my-1.5 font-semibold" /></Link>
                 </p>
                 <p>

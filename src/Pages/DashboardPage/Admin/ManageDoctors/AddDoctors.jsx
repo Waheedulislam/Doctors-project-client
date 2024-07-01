@@ -84,7 +84,7 @@ const AddDoctors = () => {
                                 <input
                                     type="text"
                                     name="name"
-                                    placeholder="Your name"
+                                    placeholder="Doctor name"
                                     className="m-2 h-16 rounded-full input w-full input-bordered"
                                     required
                                 />

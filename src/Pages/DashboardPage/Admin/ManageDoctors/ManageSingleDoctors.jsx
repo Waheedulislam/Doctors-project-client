@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const ManageSingleDoctors = ({ doctor, onDelete }) => {
+
     const handleDoctorDelete = async () => {
         const userConfirmed = window.confirm('Are you sure you want to Delete a Doctor?')
         console.log(userConfirmed)
@@ -54,7 +55,7 @@ const ManageSingleDoctors = ({ doctor, onDelete }) => {
 
                 <p>
                     <Link
-                        to={`/doctorAppointment/${doctor?.id}`}
+                        to={`/dashboard/Edit-Doctor/${doctor?._id}`}
                         className="btn text-center  bg-teal-600 text-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg w-full mt-2 "> Edit Doctors <FaArrowRight className="my-1.5 font-semibold" /></Link>
                 </p>
                 <p>

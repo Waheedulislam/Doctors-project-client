@@ -5,9 +5,7 @@ import { Link, useParams } from "react-router-dom";
 const SeeAllServiceDescription = () => {
 
     const { id } = useParams();
-    console.log(id)
     const [services, setServices] = useState([]);
-    console.log(services)
     useEffect(() => {
         async function lode() {
             const data = await axios.get(`http://localhost:5000/services/${id}`)
