@@ -11,7 +11,7 @@ const ManageAllService = () => {
     useEffect(() => {
         async function lodeBike() {
             const data = await axios.get('http://localhost:5000/services')
-            console.log(data)
+
             if (data?.status == 200) {
                 setServices(data?.data)
             }
@@ -19,6 +19,10 @@ const ManageAllService = () => {
 
         lodeBike()
     }, [])
+    // handle delete Service
+    const handleDeleteService = (id) => {
+        setServices(services.filter((service) => service._id !== id))
+    }
     // Search Services
     const handleSearch = (event) => {
         setSearchTerm(event.target.value);
@@ -57,15 +61,16 @@ const ManageAllService = () => {
 
                 {
                     services?.filter((service) => {
-                        console.log(service)
+
                         return searchTerm.toLocaleLowerCase() === '' ? service
                             :
                             service?.serviceName.toLocaleLowerCase().includes(searchTerm)
                     })?.map((service) =>
                     (
                         <ManageSingleService
-                            key={service.id}
+                            key={service._id}
                             service={service}
+                            onDelete={handleDeleteService}
                         />
 
                     ))

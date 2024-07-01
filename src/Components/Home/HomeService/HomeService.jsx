@@ -9,7 +9,7 @@ const HomeService = () => {
 
     useEffect(() => {
         async function lodeBike() {
-            const data = await axios.get('http://localhost:3000/Service')
+            const data = await axios.get('http://localhost:5000/services')
 
             if (data?.status == 200) {
                 setServices(data?.data)
@@ -33,7 +33,7 @@ const HomeService = () => {
                     services?.slice(0, 6)?.map((service) =>
                     (
                         <HomeSingleService
-                            key={service.id}
+                            key={service._id}
                             service={service}
                         />
 

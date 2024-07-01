@@ -12,7 +12,7 @@ const Services = () => {
     console.log(services)
     useEffect(() => {
         async function lodeBike() {
-            const data = await axios.get('http://localhost:3000/Service')
+            const data = await axios.get('http://localhost:5000/services')
             console.log(data)
             if (data?.status == 200) {
                 setServices(data?.data)

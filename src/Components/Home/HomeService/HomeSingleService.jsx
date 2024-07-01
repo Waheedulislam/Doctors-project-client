@@ -25,7 +25,7 @@ const HomeSingleService = ({ service }) => {
                 }
                 <p>
                     <Link
-                        to={`/serviceDescription/${service?.id}`}
+                        to={`/serviceDescription/${service?._id}`}
                         className="text-xl flex justify-center align-middle gap-2 font-bold hover:text-teal-600 "> Learn More <FaArrowRight className="my-1.5 font-semibold" /></Link>
                 </p>
             </div>

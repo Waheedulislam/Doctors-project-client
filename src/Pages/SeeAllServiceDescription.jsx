@@ -10,7 +10,7 @@ const SeeAllServiceDescription = () => {
     console.log(services)
     useEffect(() => {
         async function lode() {
-            const data = await axios.get(`http://localhost:3000/Service/${id}`)
+            const data = await axios.get(`http://localhost:5000/services/${id}`)
             console.log(data)
             if (data?.status == 200) {
                 setServices(data?.data)
