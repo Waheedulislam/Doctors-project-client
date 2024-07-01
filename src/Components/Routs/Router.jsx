@@ -27,6 +27,7 @@ import UserHealthRecord from "../../Pages/DashboardPage/User/UserHealthRecord/Us
 import UserMedicalTest from "../../Pages/DashboardPage/User/UserMedicalTest/UserMedicalTest";
 import UserPrescription from "../../Pages/DashboardPage/User/UserPrescription/UserPrescription";
 import UserAppointment from "../../Pages/DashboardPage/User/UserAppointment/UserAppointment";
+import AllUsers from "../../Pages/DashboardPage/Admin/AllUsers/AllUsers";
 
 
 const router = createBrowserRouter([
@@ -123,7 +124,7 @@ const router = createBrowserRouter([
 
             {
                 path: 'All-Users',
-                element: <UserHome />
+                element: <AllUsers />
             },
             //////// user Route ////////
             {

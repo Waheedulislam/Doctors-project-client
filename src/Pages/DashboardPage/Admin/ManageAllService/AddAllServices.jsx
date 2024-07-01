@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const AddAllServices = () => {
     const [serviceSpecialty, setServiceSpecialty] = useState();
@@ -13,6 +14,49 @@ const AddAllServices = () => {
         }
         load();
     }, [])
+
+    const handleService = async (e) => {
+        e.preventDefault();
+
+        const form = e.target;
+
+        const serviceName = form.serviceName.value;
+        const email = form.email.value;
+        const time = form.time.value;
+        const date = form.date.value;
+        const contact = form.contact.value;
+        const description = form.description.value;
+        const imageUrl = form.imageUrl.value;
+
+        const serviceInformation = {
+            serviceName: serviceName,
+            imgUrl: imageUrl,
+            email: email,
+            contact: contact,
+            time: time,
+            date: date,
+            description: description,
+        }
+        console.log(serviceInformation)
+        const userConfirmed = window.confirm('Are you sure you want to add a Service?')
+        console.log(userConfirmed)
+
+        if (userConfirmed) {
+            const addService = await axios.post('http://localhost:5000/services', serviceInformation)
+            try {
+                if (addService?.status == 200) {
+                    console.log(addService)
+                    toast.success('Successfully Added a Service')
+                }
+            } catch (error) {
+                console.error("There was an error creating the Service!", error);
+                alert("Failed to create Service. Please try again.");
+            }
+        } else {
+            alert("Doctor creation cancelled.");
+        }
+        form.reset();
+    }
 
     return (
         <div>
@@ -31,14 +75,14 @@ const AddAllServices = () => {
 
                     <div className="card  bg-base-100 ml-5 mt-4 lg:w-2/4 shrink-0 shadow-2xl">
 
-                        <form className="card-body">
+                        <form onSubmit={handleService} className="card-body">
 
                             {/* Name/specialty  */}
                             <div className="gap-2 flex justify-center">
 
-                                <select name="category"
+                                <select
+                                    name="serviceName"
                                     required
-                                    id=""
                                     className="m-2 h-16 rounded-full input w-full input-bordered">
                                     {
                                         serviceSpecialty?.map(service => <option key={service} value={service?.title}>{service?.title}</option>)
@@ -52,12 +96,16 @@ const AddAllServices = () => {
 
                                 <input
                                     type="email"
+                                    name="email"
+                                    disabled
+                                    defaultValue="doctorate123@gmail.com"
                                     placeholder="Email"
                                     className="h-16 m-2 rounded-full input w-full input-bordered"
                                     required
                                 />
                                 <input
                                     type="contact"
+                                    name="contact"
                                     placeholder="contact"
                                     className="h-16 m-2 rounded-full input w-full input-bordered "
                                     required
@@ -70,12 +118,14 @@ const AddAllServices = () => {
 
                                 <input
                                     type="date"
+                                    name="date"
                                     placeholder="Date"
                                     className="h-16 m-2 rounded-full input w-full input-bordered"
                                     required
                                 />
                                 <input
                                     type="time"
+                                    name="time"
                                     placeholder="Time"
                                     className="h-16 m-2 rounded-full input w-full input-bordered "
                                     required
@@ -86,6 +136,7 @@ const AddAllServices = () => {
                             <div >
                                 <input
                                     type="text"
+                                    name="imageUrl"
                                     placeholder="Image Url"
                                     className="h-16 m-2 rounded-full input w-full input-bordered"
                                     required
@@ -96,6 +147,7 @@ const AddAllServices = () => {
                             <div >
                                 <input
                                     type="text"
+                                    name="description"
                                     placeholder="Write your message..."
                                     className="h-28 m-2 rounded-2xl input w-full input-bordered"
                                     required

@@ -50,11 +50,11 @@ const AddDoctors = () => {
                 }
                 toast.success('Successfully Added a Doctor')
             } catch (error) {
-                console.error("There was an error creating the appointment!", error);
-                alert("Failed to create appointment. Please try again.");
+                console.error("There was an error creating the Doctor!", error);
+                alert("Failed to create Doctor. Please try again.");
             }
         } else {
-            alert("Appointment creation cancelled.");
+            alert("Doctor creation cancelled.");
         }
 
         form.reset();

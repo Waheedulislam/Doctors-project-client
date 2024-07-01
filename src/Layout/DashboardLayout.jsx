@@ -4,6 +4,7 @@ import auth from "../Components/Firebase/firebase.config";
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import { useEffect } from "react";
+import { FcAddDatabase } from "react-icons/fc";
 import { FaAlignJustify, FaHome, FaUsers } from "react-icons/fa";
 import { CiServer } from "react-icons/ci";
 import { FaPrescriptionBottleMedical, FaUserDoctor } from "react-icons/fa6";
@@ -114,6 +115,18 @@ const DashboardLayout = () => {
                                                             : '  bg-white border-teal-600 border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
                                                     }
                                                     to={'/Dashboard/add-Services'}
+                                                >
+                                                    <FcAddDatabase /> Add Services
+                                                </NavLink>
+                                            </li>
+                                            <li className="mt-2">
+                                                <NavLink
+                                                    className={({ isActive }) =>
+                                                        isActive
+                                                            ? 'text-teal-700 bg-white  border-teal-600  text-lg    hover:bg-white border-2  px-3  rounded-lg  font-medium'
+                                                            : '  bg-white border-teal-600 border-2  border-none hover:bg-white  hover:text-teal-700 px-3  rounded-lg text-lg font-medium'
+                                                    }
+                                                    to={'/Dashboard/All-Users'}
                                                 >
                                                     <FaUsers />  All Users
                                                 </NavLink>
