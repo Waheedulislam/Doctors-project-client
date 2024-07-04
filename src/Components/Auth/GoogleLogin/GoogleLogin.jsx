@@ -3,16 +3,34 @@ import googleIcon from '../../../assets/image/google.png'
 import auth from '../../Firebase/firebase.config';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import { useEffect } from 'react';
+import useAxiosPublic from '../../Hooks/useAxiosPublic';
 const GoogleLogin = () => {
     const [signInWithGoogle, user] = useSignInWithGoogle(auth);
     const location = useLocation();
-    console.log(location)
+    const axiosPublic = useAxiosPublic();
+
     const navigate = useNavigate();
 
     const formLocation = location?.state?.from?.pathname || '/'
     console.log(formLocation)
+
     const handleSignInGoogle = () => {
-        signInWithGoogle()
+        signInWithGoogle().then((data) => {
+            console.log(data)
+            if (data?.user?.email) {
+                const userInfo = {
+                    email: data?.user?.email,
+                    name: data?.user?.displayName,
+                    photoURL: data?.user?.photoURL,
+                }
+                axiosPublic.post('/users', userInfo)
+                    .then(res => {
+                        console.log(res.data)
+                    })
+
+            }
+
+        })
     }
     useEffect(() => {
         if (user) {

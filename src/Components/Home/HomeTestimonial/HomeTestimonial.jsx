@@ -5,7 +5,6 @@ import Marquee from "react-fast-marquee";
 
 const HomeTestimonial = () => {
     const [testimonials, setTestimonials] = useState([]);
-    console.log(testimonials)
     useEffect(() => {
         async function load() {
             const data = await axios.get('http://localhost:3000/PatientReview')

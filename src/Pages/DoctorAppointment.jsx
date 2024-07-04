@@ -60,7 +60,6 @@ const DoctorAppointment = () => {
                 const response = await axios.post('http://localhost:5000/appointment', appointmentInformation);
                 if (response?.status === 200) {
                     console.log(response)
-                    alert("Appointment successfully created!");
                     toast.success('Successfully Added an Appointment')
                 }
             } catch (error) {
