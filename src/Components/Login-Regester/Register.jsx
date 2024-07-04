@@ -9,9 +9,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import GoogleLogin from "../Auth/GoogleLogin/GoogleLogin";
 import GithubLogin from "../Auth/GithubLogin/GithubLogin";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
 
 
 const Register = () => {
+
+    const axiosPublic = useAxiosPublic();
 
     // create user email and password 
     const [
@@ -43,6 +46,8 @@ const Register = () => {
         const password = form.password.value;
         console.log(name, email, password)
 
+
+
         // password length check error
         if (password.length < 6) {
             setRegisterError('Password should be at least 6 characters');
@@ -53,6 +58,17 @@ const Register = () => {
             return;
         }
         createUserWithEmailAndPassword(email, password, name)
+            .then((data) => {
+                if (data?.user?.email) {
+                    const userInfo = {
+                        name: name,
+                        email: data?.user?.email,
+
+                    }
+                    console.log(userInfo)
+                    axiosPublic.post('/users', userInfo)
+                }
+            })
 
     }
 
