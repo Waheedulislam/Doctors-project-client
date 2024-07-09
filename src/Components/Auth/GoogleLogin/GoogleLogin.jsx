@@ -23,9 +23,26 @@ const GoogleLogin = () => {
                     name: data?.user?.displayName,
                     photoURL: data?.user?.photoURL,
                 }
+                // Send user Database
                 axiosPublic.post('/users', userInfo)
                     .then(res => {
                         console.log(res.data)
+                        // Get Token and store Client site
+                        const userEmail = { email: userInfo?.email };
+                        if (res?.data) {
+                            axiosPublic.post('/jwt', userEmail)
+                                .then((res) => {
+                                    console.log("JWT response: ", res);
+                                    if (res.data.token) {
+                                        localStorage.setItem('access-token', res?.data?.token)
+                                        console.log("Token set in localStorage: ", res?.data?.token);
+                                    } else {
+                                        console.log("Token not found in response")
+                                    }
+                                })
+                        } else {
+                            console.log("User already exists or not inserted");
+                        }
                     })
 
             }

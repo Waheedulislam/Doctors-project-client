@@ -4,10 +4,9 @@ import { toast } from "react-toastify";
 
 const AddAllServices = () => {
     const [serviceSpecialty, setServiceSpecialty] = useState();
-    console.log(serviceSpecialty)
     useEffect(() => {
         async function load() {
-            const data = await axios.get('http://localhost:3000/doctorSpecialties')
+            const data = await axios.get('http://localhost:5000/doctorSpecialties')
             if (data.status == 200) {
                 setServiceSpecialty(data?.data)
             }
@@ -85,7 +84,7 @@ const AddAllServices = () => {
                                     required
                                     className="m-2 h-16 rounded-full input w-full input-bordered">
                                     {
-                                        serviceSpecialty?.map(service => <option key={service} value={service?.title}>{service?.title}</option>)
+                                        serviceSpecialty?.map(service => <option key={service._id} value={service?.title}>{service?.title}</option>)
                                     }
                                 </select>
                             </div>

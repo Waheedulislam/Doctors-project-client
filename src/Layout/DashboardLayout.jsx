@@ -11,6 +11,7 @@ import { FaPrescriptionBottleMedical, FaUserDoctor } from "react-icons/fa6";
 import { MdContactMail, MdMenuOpen, MdNoteAlt } from "react-icons/md";
 import { IoIosApps } from "react-icons/io";
 import { GiHypodermicTest } from "react-icons/gi";
+import useAdmin from "../Components/Hooks/useAdmin";
 
 const DashboardLayout = () => {
     const [user] = useAuthState(auth);
@@ -22,6 +23,7 @@ const DashboardLayout = () => {
         if (successSignOut) {
             alert("Do you want to logout...?");
             toast.success("Successfully Logout");
+            localStorage.removeItem('access-token');
         }
     };
     useEffect(() => {
@@ -31,7 +33,7 @@ const DashboardLayout = () => {
     }, [user, navigate])
 
     // To do isAdmin
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
 
     return (
         <div>
@@ -58,7 +60,7 @@ const DashboardLayout = () => {
                         <div className="mb-10">
                             <ul>
                                 {
-                                    isAdmin ?
+                                    !isAdmin ?
                                         <>
                                             <li><NavLink
                                                 className={({ isActive }) =>

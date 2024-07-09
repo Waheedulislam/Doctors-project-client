@@ -12,6 +12,7 @@ const Navbar = () => {
     const handleSignOut = () => {
         const successSignOut = signOut();
         if (successSignOut) {
+            localStorage.removeItem('access-token');
             alert("Do you want to logout...?");
             toast.success("Successfully Logout");
         }
