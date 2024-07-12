@@ -12,7 +12,7 @@ const ManageSingleService = ({ service, onDelete }) => {
         const userConfirmed = window.confirm('Are you sure you want to Delete a Service?')
         console.log(userConfirmed)
         if (userConfirmed) {
-            const DeleteService = await axios.delete(`http://localhost:5000/services/${service._id}`)
+            const DeleteService = await axios.delete(`https://doctors-project-server.onrender.com/services/${service._id}`)
             console.log(DeleteService)
             try {
                 if (DeleteService?.status == 200) {

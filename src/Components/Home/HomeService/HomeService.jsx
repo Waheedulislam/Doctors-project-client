@@ -9,7 +9,7 @@ const HomeService = () => {
 
     useEffect(() => {
         async function lodeBike() {
-            const data = await axios.get('http://localhost:5000/services')
+            const data = await axios.get('https://doctors-project-server.onrender.com/services')
 
             if (data?.status == 200) {
                 setServices(data?.data)

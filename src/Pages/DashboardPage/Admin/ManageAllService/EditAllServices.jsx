@@ -9,7 +9,7 @@ const EditAllServices = () => {
     console.log(services)
     useEffect(() => {
         async function lode() {
-            const data = await axios.get(`http://localhost:5000/services/${id}`)
+            const data = await axios.get(`https://doctors-project-server.onrender.com/services/${id}`)
 
             if (data?.status == 200) {
                 setServices(data?.data)
@@ -46,7 +46,7 @@ const EditAllServices = () => {
         console.log(userConfirmed)
 
         if (userConfirmed) {
-            const addService = await axios.patch(`http://localhost:5000/services/${id}`, serviceInformation)
+            const addService = await axios.patch(`https://doctors-project-server.onrender.com/services/${id}`, serviceInformation)
             try {
                 if (addService?.status == 200) {
                     console.log(addService)

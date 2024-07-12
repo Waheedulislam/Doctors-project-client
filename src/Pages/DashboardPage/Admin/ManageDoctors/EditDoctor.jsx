@@ -11,7 +11,7 @@ const EditDoctor = () => {
     //Doctor GET
     useEffect(() => {
         async function lode() {
-            const data = await axios.get(`http://localhost:5000/doctors/${id}`)
+            const data = await axios.get(`https://doctors-project-server.onrender.com/doctors/${id}`)
 
             if (data?.status == 200) {
                 setDoctor(data?.data)
@@ -49,7 +49,7 @@ const EditDoctor = () => {
         // Doctor patch
         const userConfirmed = window.confirm("Are you sure you want to Edit a Doctor?");
         if (userConfirmed) {
-            const editDoctor = await axios.patch(`http://localhost:5000/doctors/${id}`, doctorInformation);
+            const editDoctor = await axios.patch(`https://doctors-project-server.onrender.com/doctors/${id}`, doctorInformation);
 
             try {
                 if (editDoctor?.status == 200) {

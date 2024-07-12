@@ -8,7 +8,7 @@ const SeeAllServiceDescription = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
         async function lode() {
-            const data = await axios.get(`http://localhost:5000/services/${id}`)
+            const data = await axios.get(`https://doctors-project-server.onrender.com/services/${id}`)
             console.log(data)
             if (data?.status == 200) {
                 setServices(data?.data)

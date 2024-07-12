@@ -7,7 +7,7 @@ const AddDoctors = () => {
     const [specialty, setSpecialty] = useState();
     useEffect(() => {
         async function load() {
-            const data = await axios.get('http://localhost:5000/doctorSpecialties')
+            const data = await axios.get('https://doctors-project-server.onrender.com/doctorSpecialties')
             if (data.status == 200) {
                 setSpecialty(data?.data)
             }
@@ -42,13 +42,13 @@ const AddDoctors = () => {
         // Doctor post
         const userConfirmed = window.confirm("Are you sure you want to add a Doctor?");
         if (userConfirmed) {
-            const addDoctor = await axios.post('http://localhost:5000/doctors', doctorInformation);
+            const addDoctor = await axios.post('https://doctors-project-server.onrender.com/doctors', doctorInformation);
             try {
                 if (addDoctor?.status == 200) {
                     console.log(addDoctor)
-                    alert('Do you want to add a Doctor ?')
+                    toast.success('Successfully Added a Doctor')
+
                 }
-                toast.success('Successfully Added a Doctor')
             } catch (error) {
                 console.error("There was an error creating the Doctor!", error);
                 alert("Failed to create Doctor. Please try again.");

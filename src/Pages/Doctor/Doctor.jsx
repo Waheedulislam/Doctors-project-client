@@ -13,7 +13,7 @@ const Doctor = () => {
     console.log(doctors)
     useEffect(() => {
         async function lode() {
-            const data = await axios.get('http://localhost:5000/doctors')
+            const data = await axios.get('https://doctors-project-server.onrender.com/doctors')
             console.log(data)
             if (data?.status == 200) {
                 setDoctors(data?.data)
