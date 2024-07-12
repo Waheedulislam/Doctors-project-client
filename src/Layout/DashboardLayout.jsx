@@ -60,7 +60,7 @@ const DashboardLayout = () => {
                         <div className="mb-10">
                             <ul>
                                 {
-                                    !isAdmin ?
+                                    isAdmin ?
                                         <>
                                             <li><NavLink
                                                 className={({ isActive }) =>

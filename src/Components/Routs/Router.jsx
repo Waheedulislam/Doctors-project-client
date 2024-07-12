@@ -30,6 +30,7 @@ import UserAppointment from "../../Pages/DashboardPage/User/UserAppointment/User
 import AllUsers from "../../Pages/DashboardPage/Admin/AllUsers/AllUsers";
 import EditAllServices from "../../Pages/DashboardPage/Admin/ManageAllService/EditAllServices";
 import EditDoctor from "../../Pages/DashboardPage/Admin/ManageDoctors/EditDoctor";
+import AdminRoute from "./AdminRoute";
 
 
 const router = createBrowserRouter([
@@ -101,39 +102,55 @@ const router = createBrowserRouter([
                 index: 'dashboard',
                 element: <DashboardHome />
             },
-            /////// Admin Rout /////////
+            /////// Admin Route /////////
             {
                 path: 'add-Doctors',
-                element: <AddDoctors />
+                element: <AdminRoute>
+                    <AddDoctors />
+                </AdminRoute>
             },
             {
                 path: 'manage-all-Doctors',
-                element: <ManageDoctors></ManageDoctors>
+                element: <AdminRoute>
+                    <ManageDoctors></ManageDoctors>
+                </AdminRoute>
             },
             {
                 path: 'manage-all-Service',
-                element: <ManageAllService />
+                element: <AdminRoute>
+                    <ManageAllService />
+                </AdminRoute>
             },
             {
                 path: 'add-Services',
-                element: <AddAllServices />
+                element: <AdminRoute>
+                    <AddAllServices />
+                </AdminRoute>
             },
             {
                 path: 'Edit-Services/:id',
-                element: <EditAllServices />
+                element: <AdminRoute>
+                    <EditAllServices />
+                </AdminRoute>
             },
             {
                 path: 'Edit-Doctor/:id',
-                element: <EditDoctor />
+                element: <AdminRoute>
+                    <EditDoctor />
+                </AdminRoute>
             },
             {
                 path: 'admin-Home',
-                element: <AdminHome />
+                element: <AdminRoute>
+                    <AdminHome />
+                </AdminRoute>
             },
 
             {
                 path: 'All-Users',
-                element: <AllUsers />
+                element: <AdminRoute>
+                    <AllUsers />
+                </AdminRoute>
             },
             //////// user Route ////////
             {
