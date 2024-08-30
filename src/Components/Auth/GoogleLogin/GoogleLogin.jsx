@@ -12,7 +12,7 @@ const GoogleLogin = () => {
     const navigate = useNavigate();
 
     const formLocation = location?.state?.from?.pathname || '/'
-    console.log(formLocation)
+    // console.log(formLocation)
 
     const handleSignInGoogle = () => {
         signInWithGoogle().then((data) => {

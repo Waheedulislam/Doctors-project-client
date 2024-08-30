@@ -42,7 +42,7 @@ const HomeDoctor = () => {
                     }
                 </div>
                 <div className="text-center">
-                    <Link to='/doctors' className=" btn text-center rounded-full bg-teal-600 text-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg ">See All Doctors <FaArrowRight className="my-1.5 font-semibold" /></Link>
+                    <Link to='/doctors' className=" btn text-center rounded-lg bg-teal-600 text-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg ">See All Doctors <FaArrowRight className="my-1.5 font-semibold" /></Link>
                 </div>
 
             </div>

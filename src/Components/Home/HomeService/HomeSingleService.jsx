@@ -2,12 +2,19 @@
 
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
+import { motion } from 'framer-motion'
+import { fadeIn } from '../../../vairants'
 
 // eslint-disable-next-line react/prop-types, no-unused-vars
 const HomeSingleService = ({ service }) => {
     return (
 
-        <div className="card grid w-96  bg-base-100 shadow-xl">
+        <motion.div
+            variants={fadeIn('up', 0.2)}
+            initial='hidden'
+            whileInView={'show'}
+            viewport={{ once: false, amount: 0.7 }}
+            className="card grid w-96  bg-base-100 shadow-2xl">
             <figure><img className="w-80 h-60" src={service?.imgUrl} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title text-3xl hover:text-teal-600 font-bold justify-center text-center">
@@ -29,7 +36,7 @@ const HomeSingleService = ({ service }) => {
                         className="text-xl flex justify-center align-middle gap-2 font-bold hover:text-teal-600 "> Learn More <FaArrowRight className="my-1.5 font-semibold" /></Link>
                 </p>
             </div>
-        </div>
+        </motion.div>
 
     );
 };

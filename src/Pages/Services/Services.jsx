@@ -27,9 +27,6 @@ const Services = () => {
     };
     return (
         <div className="mt-8">
-
-
-
             <div className="text-center  mb-10">
                 <h1 className="font-bold mb-2 btn text-xl bg-teal-100 text-teal-700 hover:text-black hover:bg-teal-100 rounded-full">All Service List</h1>
 

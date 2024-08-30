@@ -85,6 +85,7 @@ const Appointment = () => {
             <div className="flex w-full justify-items-center  px-80 flex-col">
                 <div className="divider"></div>
             </div>
+
             <div className="hero  min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse ">
                     <div className="text-center lg:w-2/4 lg:text-left lg:ml-10">
@@ -125,7 +126,7 @@ const Appointment = () => {
 
                     {/* From information  */}
 
-                    <div className="card  bg-base-100  lg:w-2/4 shrink-0 shadow-2xl">
+                    <div className="card   bg-base-100  lg:w-2/4 shrink-0 shadow-2xl">
                         <form onSubmit={handleAppointment} className="card-body">
 
                             {/* Name/Phone number  */}

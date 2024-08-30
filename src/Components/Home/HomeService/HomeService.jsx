@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 
+
 const HomeService = () => {
     const [services, setServices] = useState([]);
 
@@ -18,6 +19,7 @@ const HomeService = () => {
 
         lodeBike()
     }, [])
+
     return (
         <div className="mt-20">
             <div className="text-center my-20">
@@ -41,7 +43,7 @@ const HomeService = () => {
                 }
             </div>
             <div className="text-center">
-                <Link to='/service' className=" btn text-center rounded-full bg-teal-600 text-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg ">See All Services <FaArrowRight className="my-1.5 font-semibold" /></Link>
+                <Link to='/service' className=" btn text-center rounded-lg bg-teal-600 text-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg ">See All Services <FaArrowRight className="my-1.5 font-semibold" /></Link>
             </div>
 
         </div>

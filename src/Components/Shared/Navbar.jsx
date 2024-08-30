@@ -7,6 +7,7 @@ import userPhoto from "../../assets/image/user-profile-icon-free-vector.jpg";
 import { toast } from "react-toastify";
 const Navbar = () => {
     const [user] = useAuthState(auth);
+    console.log(user)
     const [signOut] = useSignOut(auth);
 
     const handleSignOut = () => {
