@@ -11,7 +11,7 @@ const ManageSingleDoctors = ({ doctor, onDelete }) => {
         const userConfirmed = window.confirm('Are you sure you want to Delete a Doctor?')
         console.log(userConfirmed)
         if (userConfirmed) {
-            const deleteDoctor = await axios.delete(`https://doctors-project-server.onrender.com/doctors/${doctor._id}`)
+            const deleteDoctor = await axios.delete(`https://doctors-project-server.vercel.app/doctors/${doctor._id}`)
             try {
                 if (deleteDoctor?.status == 200) {
                     toast.success('Successfully Delete a Doctor')

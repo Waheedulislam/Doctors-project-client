@@ -12,7 +12,7 @@ const Services = () => {
     console.log(services)
     useEffect(() => {
         async function lodeBike() {
-            const data = await axios.get('https://doctors-project-server.onrender.com/services')
+            const data = await axios.get('https://doctors-project-server.vercel.app/services')
             console.log(data)
             if (data?.status == 200) {
                 setServices(data?.data)
@@ -63,7 +63,7 @@ const Services = () => {
                     })?.map((service) =>
                     (
                         <SingleServices
-                            key={service.id}
+                            key={service._id}
                             service={service}
                         />
 

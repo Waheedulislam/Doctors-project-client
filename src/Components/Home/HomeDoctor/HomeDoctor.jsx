@@ -9,7 +9,7 @@ const HomeDoctor = () => {
 
     useEffect(() => {
         async function lode() {
-            const data = await axios.get('https://doctors-project-server.onrender.com/doctors')
+            const data = await axios.get('https://doctors-project-server.vercel.app/doctors')
 
             if (data?.status == 200) {
                 setDoctors(data?.data)

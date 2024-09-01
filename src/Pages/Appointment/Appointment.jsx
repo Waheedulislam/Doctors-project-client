@@ -11,7 +11,7 @@ const Appointment = () => {
     // doctor filter name and service
     useEffect(() => {
         async function lode() {
-            const data = await axios.get('https://doctors-project-server.onrender.com/doctors')
+            const data = await axios.get('https://doctors-project-server.vercel.app/doctors')
             console.log(data)
             if (data?.status == 200) {
                 setDoctors(data?.data)
@@ -60,7 +60,7 @@ const Appointment = () => {
         console.log(userConfirmed, appointmentInformation)
         if (userConfirmed) {
             try {
-                const response = await axios.post('https://doctors-project-server.onrender.com/appointment', appointmentInformation);
+                const response = await axios.post('https://doctors-project-server.vercel.app/appointment', appointmentInformation);
                 if (response?.status === 200) {
                     console.log(response)
                     toast.success('Successfully Added an Appointment')

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const SeeAllServiceDescription = () => {
 
@@ -8,7 +8,7 @@ const SeeAllServiceDescription = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
         async function lode() {
-            const data = await axios.get(`https://doctors-project-server.onrender.com/services/${id}`)
+            const data = await axios.get(`https://doctors-project-server.vercel.app/services/${id}`)
             console.log(data)
             if (data?.status == 200) {
                 setServices(data?.data)
@@ -27,15 +27,9 @@ const SeeAllServiceDescription = () => {
                         {services?.serviceName}
 
                     </h2>
-                    {
-                        services?.description?.length > 100 ?
-                            <p>{services?.description.slice(0, 100)}
-                                <Link
-                                    to={`/serviceDescription/${services?.id}`}
-                                    className="text-teal-600 font-semibold"> Read more</Link></p>
-                            :
-                            <p>{services?.description}</p>
-                    }
+
+
+                    <p>{services?.description}</p>
                     <div className="card-actions justify-end">
                         <div className="badge badge-outline">Fashion</div>
                         <div className="badge badge-outline">Products</div>
