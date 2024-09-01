@@ -16,14 +16,14 @@ const SingleServices = ({ service }) => {
                     service?.description?.length > 100 ?
                         <p>{service?.description.slice(0, 100)}
                             <Link
-                                to={`/serviceDescription/${service?.id}`}
+                                to={`/serviceDescription/${service?._id}`}
                                 className="text-teal-600 my-4 font-semibold"> Read more....</Link></p>
                         :
                         <p>{service?.description}</p>
                 }
                 <p>
                     <Link
-                        to={`/serviceDescription/${service?.id}`}
+                        to={`/serviceDescription/${service?._id}`}
                         className="text-xl flex justify-center align-middle gap-2 font-bold hover:text-teal-600 "> Learn More <FaArrowRight className="my-1.5 font-semibold" /></Link>
                 </p>
             </div>

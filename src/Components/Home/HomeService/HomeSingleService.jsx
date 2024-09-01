@@ -25,7 +25,7 @@ const HomeSingleService = ({ service }) => {
                     service?.description?.length > 100 ?
                         <p>{service?.description.slice(0, 100)}
                             <Link
-                                to={`/serviceDescription/${service?.id}`}
+                                to={`/serviceDescription/${service?._id}`}
                                 className="text-teal-600 my-4 font-semibold"> Read more....</Link></p>
                         :
                         <p>{service?.description}</p>
