@@ -74,7 +74,7 @@ const Services = () => {
                 <Link to='/' className=" btn text-center rounded-full bg-teal-600 text-white border-white border-2 hover:text-teal-700 hover:border-teal-700 hover:bg-white text-lg ">Back to Home Page <FaArrowLeft className="my-1.5 font-semibold" /></Link>
             </div>
 
-            {/* process  */}
+            {/* process-1  */}
             <Process></Process>
 
         </div>
