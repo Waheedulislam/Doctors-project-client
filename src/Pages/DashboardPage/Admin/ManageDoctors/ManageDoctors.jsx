@@ -10,7 +10,7 @@ const ManageDoctors = () => {
 
     useEffect(() => {
         async function lode() {
-            const data = await axios.get('https://doctors-project-server.vercel.app/doctors')
+            const data = await axios.get('https://doctors-project-server.onrender.com/doctors')
             console.log(data)
             if (data?.status == 200) {
                 setDoctors(data?.data)

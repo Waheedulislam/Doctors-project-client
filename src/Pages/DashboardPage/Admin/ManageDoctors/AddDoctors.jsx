@@ -7,7 +7,7 @@ const AddDoctors = () => {
     const [specialty, setSpecialty] = useState();
     useEffect(() => {
         async function load() {
-            const data = await axios.get('https://doctors-project-server.vercel.app/doctorSpecialties')
+            const data = await axios.get('https://doctors-project-server.onrender.com/doctorSpecialties')
             if (data.status == 200) {
                 setSpecialty(data?.data)
             }
@@ -42,7 +42,7 @@ const AddDoctors = () => {
         // Doctor post
         const userConfirmed = window.confirm("Are you sure you want to add a Doctor?");
         if (userConfirmed) {
-            const addDoctor = await axios.post('https://doctors-project-server.vercel.app/doctors', doctorInformation);
+            const addDoctor = await axios.post('https://doctors-project-server.onrender.com/doctors', doctorInformation);
             try {
                 if (addDoctor?.status == 200) {
                     console.log(addDoctor)

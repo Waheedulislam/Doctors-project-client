@@ -22,7 +22,7 @@ const AllUsers = () => {
     const handleMakeAdmin = async (user) => {
         Swal.fire({
             title: "Are you sure?",
-            text: "You won't be delete user!",
+            text: "You won't be make admin!",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",

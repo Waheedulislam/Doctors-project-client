@@ -11,6 +11,8 @@ const HomeSingleTestimonial = ({ testimonial }) => {
                 <div className="w-32 my-5 rounded-full">
                     <img src={testimonial?.imageUrl} alt="Shoes" />
                 </div>
+                {/* https://doctors-project-server.onrender.com */}
+                {/* https://doctors-project-server.onrender.com */}
             </div>
             <div className="card-body">
                 <h2 className="card-title text-3xl hover:text-teal-600 font-bold justify-center text-center">

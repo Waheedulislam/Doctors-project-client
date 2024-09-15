@@ -12,7 +12,7 @@ const Doctor = () => {
     console.log(doctors)
     useEffect(() => {
         async function lode() {
-            const data = await axios.get('https://doctors-project-server.vercel.app/doctors')
+            const data = await axios.get('https://doctors-project-server.onrender.com/doctors')
             console.log(data)
             if (data?.status == 200) {
                 setDoctors(data?.data)
@@ -27,9 +27,6 @@ const Doctor = () => {
     };
     return (
         <div className="mt-8">
-
-
-
             <div className="text-center  mb-10">
                 <h1 className="text-5xl font-bold text-black">Our <span className='text-teal-600'>Best Quality </span>
                     Doctors </h1>

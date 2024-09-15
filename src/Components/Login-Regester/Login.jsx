@@ -18,7 +18,7 @@ const Login = () => {
 
     // Reset password
     const [email, setEmail] = useState('');
-
+    console.log(email)
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(
         auth
     );

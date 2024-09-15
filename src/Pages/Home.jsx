@@ -16,10 +16,11 @@ const Home = () => {
             <Process></Process>
             <HomeCheckUp />
             <HomeDoctor />
-            <HomeTestimonial />
             <HomeChooseUs></HomeChooseUs>
             <Counseling />
             <HomeBlogs />
+            <HomeTestimonial />
+
         </div>
     );
 };

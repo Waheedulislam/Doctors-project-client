@@ -13,7 +13,7 @@ const DoctorAppointment = () => {
     useEffect(() => {
         // doctor get
         async function load() {
-            const data = await axios.get(`https://doctors-project-server.vercel.app/doctors/${id}`)
+            const data = await axios.get(`https://doctors-project-server.onrender.com/doctors/${id}`)
 
             if (data?.status == 200) {
                 setDoctor(data?.data)
@@ -57,7 +57,7 @@ const DoctorAppointment = () => {
 
         if (userConfirmed) {
             try {
-                const response = await axios.post('https://doctors-project-server.vercel.app/appointment', appointmentInformation);
+                const response = await axios.post('https://doctors-project-server.onrender.com/appointment', appointmentInformation);
                 if (response?.status === 200) {
                     console.log(response)
                     toast.success('Successfully Added an Appointment')
