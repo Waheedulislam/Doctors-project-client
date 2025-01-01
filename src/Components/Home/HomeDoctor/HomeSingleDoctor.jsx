@@ -15,7 +15,7 @@ const HomeSingleDoctor = ({ doctor }) => {
             whileInView={'show'}
             viewport={{ once: false, amount: 0.7 }}
             className="card grid w-96  bg-base-100 shadow-2xl">
-            <figure><img className="w-full h-80" src={doctor?.image} alt="Shoes" /></figure>
+            <figure><img className="w-full h-64" src={doctor?.image} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title text-3xl hover:text-teal-600 font-bold justify-center text-center">
                     {doctor?.name}

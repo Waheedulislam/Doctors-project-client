@@ -22,7 +22,7 @@
     "json-server": "^1.0.0-beta.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.6.4",
     "react-firebase-hooks": "^5.1.1",
@@ -33,14 +33,15 @@
     "react-toastify": "^10.0.5",
     "slick-carousel": "^1.8.1",
     "sort-by": "^1.2.0",
-    "sweetalert2": "^11.12.1"
+    "sweetalert2": "^11.12.1",
+    "tabs": "^0.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.19",
-    "daisyui": "^4.12.2",
+    "daisyui": "^4.12.23",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",

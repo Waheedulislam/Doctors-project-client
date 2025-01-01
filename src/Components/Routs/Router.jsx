@@ -1,7 +1,6 @@
 import { createBrowserRouter, } from "react-router-dom";
 import MainLayout from "../../Layout/MainLayout";
 import Home from "../../Pages/Home";
-import About from "../../Pages/About";
 import Contact from "../../Pages/Contact";
 import Login from "../Login-Regester/Login";
 import Register from "../Login-Regester/Register";
@@ -31,6 +30,7 @@ import AllUsers from "../../Pages/DashboardPage/Admin/AllUsers/AllUsers";
 import EditAllServices from "../../Pages/DashboardPage/Admin/ManageAllService/EditAllServices";
 import EditDoctor from "../../Pages/DashboardPage/Admin/ManageDoctors/EditDoctor";
 import AdminRoute from "./AdminRoute";
+import About from "../../Pages/About";
 
 
 const router = createBrowserRouter([

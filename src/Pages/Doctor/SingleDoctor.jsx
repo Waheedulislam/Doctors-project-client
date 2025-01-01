@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 const SingleDoctor = ({ doctor }) => {
 
     return (
-        <div className="card grid w-96  bg-base-100 shadow-xl">
-            <figure><img className="w-full h-80" src={doctor?.image} alt="Shoes" /></figure>
+        <div className="card grid w-96  bg-base-100 shadow-xl ">
+            <figure><img className="w-full h-64" src={doctor?.image} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title text-3xl hover:text-teal-600 font-bold justify-center text-center">
                     {doctor?.name}

@@ -50,7 +50,7 @@ const Doctor = () => {
                 </form>
             </div>
 
-            <div className="grid my-8  grid-cols-1 md:grid-cols-2 gap-6 lg:grid-cols-3  justify-items-center">
+            <div className="grid my-8  grid-cols-1 md:grid-cols-2 gap-6 lg:grid-cols-3  justify-items-center ">
 
                 {
                     doctors?.filter((doctor) => {
